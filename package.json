@@ -7,8 +7,14 @@
   "private": true,
   "scripts": {
     "start": "redocly preview-docs",
-    "build": "redocly build-docs openapi/openapi.yaml -o dist/index.html",
-    "bundle": "redocly bundle openapi/openapi.yaml -o dist/bundle.yaml",
+    "start:swagger": "npx http-server dist -p 8081",
+    "build": "npm run build:redocly && npm run build:swagger",
+    "build:redocly": "redocly build-docs openapi/openapi.yaml -o dist/index.html",
+    "build:swagger": "npm run bundle && node scripts/build-swagger.js",
+    "bundle": "redocly bundle openapi/openapi.yaml -o dist/openapi.json",
     "test": "redocly lint"
+  },
+  "devDependencies": {
+    "swagger-ui-dist": "^5.31.0"
   }
 }

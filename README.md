@@ -14,13 +14,38 @@
 ### Usage
 
 #### `npm start`
-Starts the reference docs preview server.
+Starts the Redocly reference docs preview server.
+
+#### `npm start:swagger`
+Starts a local server to preview Swagger UI (requires building first).
 
 #### `npm run build`
-Bundles the definition to the dist folder.
+Builds both Redocly documentation and Swagger UI to the dist folder.
+
+#### `npm run build:redocly`
+Builds only the Redocly documentation.
+
+#### `npm run build:swagger`
+Builds only the Swagger UI.
 
 #### `npm test`
 Validates the definition.
+
+## Documentation Formats
+
+This repository generates two types of API documentation:
+
+### Redocly (Main Documentation)
+- **Location:** `dist/index.html`
+- **Live:** https://greenbuttonalliance.github.io/openapi-starter/
+- **Purpose:** Beautiful, readable API documentation
+- **Features:** Clean layout, Green Button theming, comprehensive examples
+
+### Swagger UI (Interactive Explorer)
+- **Location:** `dist/swagger/index.html`
+- **Live:** https://greenbuttonalliance.github.io/openapi-starter/swagger/
+- **Purpose:** Interactive API testing and exploration
+- **Features:** "Try it out" functionality, request/response testing, OAuth flow
 
 ## Contribution Guide
 
