@@ -32,35 +32,3 @@ get:
       description: Bad Request - The request was malformed or contained invalid parameters.
     '403':
       description: Forbidden - The access token does not have sufficient scope.
-post:
-  tags:
-    - Batch
-  summary: Upload a Green Button XML file [FB_33]
-  description: >-
-    Uploads a Green Button XML file containing UsagePoint data for the
-    specified Retail Customer. Requires a valid data_custodian_access_token
-    or upload_access_token.
-  operationId: uploadMyData
-  parameters:
-    - name: retailCustomerId
-      in: path
-      description: The Retail Customer's ID.
-      required: true
-      schema:
-        type: string
-  security:
-    - oauth2: []
-  requestBody:
-    description: Green Button XML file contents to upload.
-    required: true
-    content:
-      application/xml:
-        schema:
-          type: string
-  responses:
-    '201':
-      description: Created - The Green Button data was successfully uploaded.
-    '400':
-      description: Bad Request - The request was malformed or contained invalid XML.
-    '403':
-      description: Forbidden - The access token does not have sufficient scope.

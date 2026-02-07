@@ -32,34 +32,3 @@ get:
       description: Bad Request - The request was malformed or contained invalid parameters.
     '403':
       description: Forbidden - The access token does not have sufficient scope.
-post:
-  tags:
-    - Batch
-  summary: Upload a Bulk transfer file [FB_99]
-  description: >-
-    Uploads a Green Button XML file for bulk transfer. Requires a valid
-    data_custodian_access_token.
-  operationId: uploadBulkData
-  parameters:
-    - name: bulkId
-      in: path
-      description: The Bulk ID as specified in the OAuth2 SCOPE string.
-      required: true
-      schema:
-        type: string
-  security:
-    - oauth2: []
-  requestBody:
-    description: Green Button XML file contents to upload.
-    required: true
-    content:
-      application/xml:
-        schema:
-          type: string
-  responses:
-    '201':
-      description: Created - The bulk data was successfully uploaded.
-    '400':
-      description: Bad Request - The request was malformed or contained invalid XML.
-    '403':
-      description: Forbidden - The access token does not have sufficient scope.
