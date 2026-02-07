@@ -17,11 +17,8 @@ openapi:
   htmlTemplate: ./docs/index.html
   theme:
     logo:
-      gutter: 20px
-      # To add logo: Place logo.png in project root and uncomment below
-      # Then obtain license from: https://www.greenbuttonalliance.org/trademarks
-      # src: ./logo.png
-      # link: https://www.greenbuttonalliance.org/
+      image: ./logo.png
+      link: https://www.greenbuttonalliance.org/
     colors:
       primary:
         main: "#10a54a"  # Green Button green
