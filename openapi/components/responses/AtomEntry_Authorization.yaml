@@ -1,0 +1,38 @@
+description: >-
+  OK - Returns an Atom entry wrapping a single Authorization resource.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomEntry.yaml'
+    examples:
+      AuthorizationEntry:
+        summary: An Authorization entry with active OAuth 2.0 authorization details
+        value: |
+          <entry xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:b3c7d1e5-4a98-5f26-8b03-1d5e7f9a2c46</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Authorization/407593" type="espi-entry/Authorization"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Authorization" type="espi-feed/Authorization"/>
+            <published>2023-10-20T17:32:35.448812Z</published>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <title>Authorization</title>
+            <content>
+              <Authorization xmlns="http://naesb.org/espi">
+                <authorizedPeriod>
+                  <duration>31536000</duration>
+                  <start>1697823155</start>
+                </authorizedPeriod>
+                <publishedPeriod>
+                  <duration>31536000</duration>
+                  <start>1697823155</start>
+                </publishedPeriod>
+                <status>1</status>
+                <expires_at>1729359155</expires_at>
+                <grant_type>authorization_code</grant_type>
+                <scope>FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39;IntervalDuration=900;BlockDuration=monthly;HistoryLength=13</scope>
+                <token_type>Bearer</token_type>
+                <resourceURI>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593</resourceURI>
+                <authorizationURI>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Authorization/407593</authorizationURI>
+                <customerResourceURI>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Batch/RetailCustomer/618934/UsagePoint</customerResourceURI>
+              </Authorization>
+            </content>
+          </entry>

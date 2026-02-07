@@ -31,7 +31,7 @@ get:
     - oauth2: []
   responses:
     '200':
-      $ref: '../components/responses/AtomEntry.yaml'
+      $ref: '../components/responses/AtomEntry_UsagePoint.yaml'
     '202':
       description: Accepted - The request has been accepted for processing.
     '400':

@@ -1,0 +1,72 @@
+description: >-
+  OK - Returns an Atom feed containing a collection of Authorization entries.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomFeed.yaml'
+    examples:
+      AuthorizationFeed:
+        summary: A feed containing Authorization entries with OAuth 2.0 authorization records
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:9d4a2e71-6b83-5f02-a1c5-3e7f8d9a0b12</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Authorization" type="espi-feed/Authorization"/>
+            <title>Authorization</title>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <entry>
+              <id>urn:uuid:b3c7d1e5-4a98-5f26-8b03-1d5e7f9a2c46</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Authorization/407593" type="espi-entry/Authorization"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Authorization" type="espi-feed/Authorization"/>
+              <published>2023-10-20T17:32:35.448812Z</published>
+              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <title>Authorization</title>
+              <content>
+                <Authorization xmlns="http://naesb.org/espi">
+                  <authorizedPeriod>
+                    <duration>31536000</duration>
+                    <start>1697823155</start>
+                  </authorizedPeriod>
+                  <publishedPeriod>
+                    <duration>31536000</duration>
+                    <start>1697823155</start>
+                  </publishedPeriod>
+                  <status>1</status>
+                  <expires_at>1729359155</expires_at>
+                  <grant_type>authorization_code</grant_type>
+                  <scope>FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39;IntervalDuration=900;BlockDuration=monthly;HistoryLength=13</scope>
+                  <token_type>Bearer</token_type>
+                  <resourceURI>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593</resourceURI>
+                  <authorizationURI>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Authorization/407593</authorizationURI>
+                  <customerResourceURI>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Batch/RetailCustomer/618934/UsagePoint</customerResourceURI>
+                </Authorization>
+              </content>
+            </entry>
+            <entry>
+              <id>urn:uuid:e8f2a6d4-5c17-5b39-9e04-8a3d6f1c7e52</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Authorization/407594" type="espi-entry/Authorization"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Authorization" type="espi-feed/Authorization"/>
+              <published>2023-10-20T17:32:44.801089Z</published>
+              <updated>2023-10-20T17:32:44.801089Z</updated>
+              <title>Authorization</title>
+              <content>
+                <Authorization xmlns="http://naesb.org/espi">
+                  <authorizedPeriod>
+                    <duration>31536000</duration>
+                    <start>1697823155</start>
+                  </authorizedPeriod>
+                  <publishedPeriod>
+                    <duration>31536000</duration>
+                    <start>1697823155</start>
+                  </publishedPeriod>
+                  <status>0</status>
+                  <expires_at>1729359155</expires_at>
+                  <grant_type>authorization_code</grant_type>
+                  <scope>FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39;IntervalDuration=3600;BlockDuration=daily;HistoryLength=13</scope>
+                  <token_type>Bearer</token_type>
+                  <resourceURI>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407594</resourceURI>
+                  <authorizationURI>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Authorization/407594</authorizationURI>
+                  <customerResourceURI>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Batch/RetailCustomer/618935/UsagePoint</customerResourceURI>
+                </Authorization>
+              </content>
+            </entry>
+          </feed>

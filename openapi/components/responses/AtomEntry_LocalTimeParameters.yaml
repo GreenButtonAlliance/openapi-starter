@@ -1,0 +1,26 @@
+description: >-
+  OK - Returns an Atom entry wrapping a single LocalTimeParameters resource.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomEntry.yaml'
+    examples:
+      LocalTimeParametersEntry:
+        summary: A LocalTimeParameters entry with US Eastern timezone DST rules
+        value: |
+          <entry xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:305129b8-503c-5b50-b293-333cd7fb6adf</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407593_1455246" type="espi-entry/LocalTimeParameters"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/LocalTimeParameters" type="espi-feed/LocalTimeParameters"/>
+            <published>2023-10-20T17:32:35.448812Z</published>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <title>LocalTimeParameters</title>
+            <content>
+              <LocalTimeParameters xmlns="http://naesb.org/espi">
+                <dstEndRule>B40E2000</dstEndRule>
+                <dstOffset>3600</dstOffset>
+                <dstStartRule>360E2000</dstStartRule>
+                <tzOffset>-18000</tzOffset>
+              </LocalTimeParameters>
+            </content>
+          </entry>

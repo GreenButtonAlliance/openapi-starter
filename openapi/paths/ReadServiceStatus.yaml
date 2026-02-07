@@ -16,6 +16,19 @@ get:
         application/atom+xml:
           schema:
             $ref: '../components/schemas/ServiceStatus.yaml'
+          examples:
+            ServiceStatusOnline:
+              summary: Service status indicating the Data Custodian is online
+              value: |
+                <ServiceStatus xmlns="http://naesb.org/espi">
+                  <currentStatus>1</currentStatus>
+                </ServiceStatus>
+            ServiceStatusOffline:
+              summary: Service status indicating the Data Custodian is offline
+              value: |
+                <ServiceStatus xmlns="http://naesb.org/espi">
+                  <currentStatus>0</currentStatus>
+                </ServiceStatus>
     '202':
       description: Accepted - The request has been accepted for processing.
     '400':

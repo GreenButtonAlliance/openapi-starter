@@ -1,0 +1,66 @@
+description: >-
+  OK - Returns an Atom feed containing a collection of IntervalBlock entries.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomFeed.yaml'
+    examples:
+      IntervalBlockFeed:
+        summary: A feed containing IntervalBlock entries with multiple billing periods
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:abf12767-5352-5615-b41a-fef23ba42bad</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+            <title>IntervalBlock</title>
+            <updated>2023-10-20T17:32:44.801089Z</updated>
+            <entry>
+              <id>urn:uuid:1e530409-5dbe-572f-aad8-fa06f6a68cfc</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock/000001" type="espi-entry/IntervalBlock"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1" type="espi-feed/MeterReading"/>
+              <published>2023-10-20T17:32:44.801089Z</published>
+              <updated>2023-10-20T17:32:44.801089Z</updated>
+              <title>IntervalBlock</title>
+              <content>
+                <IntervalBlock xmlns="http://naesb.org/espi">
+                  <interval>
+                    <duration>2332800</duration>
+                    <start>1663992000</start>
+                  </interval>
+                  <IntervalReading>
+                    <cost>115780000</cost>
+                    <timePeriod>
+                      <duration>2332800</duration>
+                      <start>1663992000</start>
+                    </timePeriod>
+                    <value>1330890000</value>
+                  </IntervalReading>
+                </IntervalBlock>
+              </content>
+            </entry>
+            <entry>
+              <id>urn:uuid:0de5026c-9497-5712-99b0-9790101aee1b</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020674_kwh_1/IntervalBlock/000001" type="espi-entry/IntervalBlock"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020674_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020674_kwh_1" type="espi-feed/MeterReading"/>
+              <published>2023-10-20T17:32:44.814423Z</published>
+              <updated>2023-10-20T17:32:44.814423Z</updated>
+              <title>IntervalBlock</title>
+              <content>
+                <IntervalBlock xmlns="http://naesb.org/espi">
+                  <interval>
+                    <duration>2768400</duration>
+                    <start>1666411200</start>
+                  </interval>
+                  <IntervalReading>
+                    <cost>107994000</cost>
+                    <timePeriod>
+                      <duration>2768400</duration>
+                      <start>1666411200</start>
+                    </timePeriod>
+                    <value>1673810000</value>
+                  </IntervalReading>
+                </IntervalBlock>
+              </content>
+            </entry>
+          </feed>

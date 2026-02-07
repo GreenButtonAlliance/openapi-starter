@@ -36,7 +36,7 @@ get:
     - oauth2: []
   responses:
     '200':
-      $ref: '../components/responses/AtomEntry.yaml'
+      $ref: '../components/responses/AtomEntry_UsageSummary.yaml'
     '400':
       description: Bad Request - The request was malformed or contained invalid parameters.
     '403':
