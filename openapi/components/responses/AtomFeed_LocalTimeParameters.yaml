@@ -1,0 +1,33 @@
+description: >-
+  OK - Returns an Atom feed containing a collection of LocalTimeParameters
+  entries.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomFeed.yaml'
+    examples:
+      LocalTimeParametersFeed:
+        summary: A feed containing LocalTimeParameters entries with timezone and DST rules
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:4a6b8c0d-2e3f-5a51-7b9c-1d2e3f4a5b6c</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/LocalTimeParameters" type="espi-feed/LocalTimeParameters"/>
+            <title>LocalTimeParameters</title>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <entry>
+              <id>urn:uuid:305129b8-503c-5b50-b293-333cd7fb6adf</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407593_1455246" type="espi-entry/LocalTimeParameters"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/LocalTimeParameters" type="espi-feed/LocalTimeParameters"/>
+              <published>2023-10-20T17:32:35.448812Z</published>
+              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <title>LocalTimeParameters</title>
+              <content>
+                <LocalTimeParameters xmlns="http://naesb.org/espi">
+                  <dstEndRule>B40E2000</dstEndRule>
+                  <dstOffset>3600</dstOffset>
+                  <dstStartRule>360E2000</dstStartRule>
+                  <tzOffset>-18000</tzOffset>
+                </LocalTimeParameters>
+              </content>
+            </entry>
+          </feed>

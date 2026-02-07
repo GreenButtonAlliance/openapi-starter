@@ -1,0 +1,29 @@
+description: >-
+  OK - Returns an Atom entry wrapping a single UsagePoint resource.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomEntry.yaml'
+    examples:
+      UsagePointEntry:
+        summary: A UsagePoint entry for an electricity service
+        value: |
+          <entry xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:e6896122-a094-5d30-be14-e44544247e14</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246" type="espi-entry/UsagePoint"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint" type="espi-feed/UsagePoint"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading" type="espi-feed/MeterReading"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/UsageSummary" type="espi-feed/UsageSummary"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/ElectricPowerQualitySummary" type="espi-feed/ElectricPowerQualitySummary"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407593_1455246" type="espi-entry/LocalTimeParameters"/>
+            <published>2023-10-20T17:32:35.448812Z</published>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <title>UsagePoint</title>
+            <content>
+              <UsagePoint xmlns="http://naesb.org/espi">
+                <ServiceCategory>
+                  <kind>0</kind>
+                </ServiceCategory>
+              </UsagePoint>
+            </content>
+          </entry>

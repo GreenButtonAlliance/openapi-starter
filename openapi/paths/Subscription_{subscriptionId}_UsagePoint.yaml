@@ -25,7 +25,7 @@ get:
     - oauth2: []
   responses:
     '200':
-      $ref: '../components/responses/AtomFeed.yaml'
+      $ref: '../components/responses/AtomFeed_UsagePoint.yaml'
     '202':
       description: Accepted - The request has been accepted for processing.
     '400':

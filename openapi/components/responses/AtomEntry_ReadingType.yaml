@@ -1,0 +1,31 @@
+description: >-
+  OK - Returns an Atom entry wrapping a single ReadingType resource.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomEntry.yaml'
+    examples:
+      ReadingTypeEntry:
+        summary: A ReadingType entry for monthly kWh electricity consumption
+        value: |
+          <entry xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:06ff0942-04fc-5f91-bc35-ca5e51b49dbb</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ReadingType/407593_1455246_Ba020673_kwh_1" type="espi-entry/ReadingType"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ReadingType" type="espi-feed/ReadingType"/>
+            <published>2023-10-20T17:32:44.801089Z</published>
+            <updated>2023-10-20T17:32:44.801089Z</updated>
+            <title>ReadingType</title>
+            <content>
+              <ReadingType xmlns="http://naesb.org/espi">
+                <accumulationBehaviour>1</accumulationBehaviour>
+                <commodity>1</commodity>
+                <currency>840</currency>
+                <flowDirection>1</flowDirection>
+                <intervalLength>2332800</intervalLength>
+                <kind>12</kind>
+                <phase>0</phase>
+                <powerOfTenMultiplier>-3</powerOfTenMultiplier>
+                <uom>72</uom>
+              </ReadingType>
+            </content>
+          </entry>

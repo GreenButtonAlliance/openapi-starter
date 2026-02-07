@@ -1,0 +1,47 @@
+description: >-
+  OK - Returns an Atom feed containing a collection of
+  ElectricPowerQualitySummary entries.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomFeed.yaml'
+    examples:
+      ElectricPowerQualitySummaryFeed:
+        summary: A feed containing ElectricPowerQualitySummary entries with power quality event data
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:a1b2c3d4-5e6f-5708-9a1b-2c3d4e5f6a7b</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/ElectricPowerQualitySummary" type="espi-feed/ElectricPowerQualitySummary"/>
+            <title>ElectricPowerQualitySummary</title>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <entry>
+              <id>urn:uuid:d4e5f6a7-b8c9-5d01-e2f3-a4b5c6d7e8f9</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/ElectricPowerQualitySummary/328475" type="espi-entry/ElectricPowerQualitySummary"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/ElectricPowerQualitySummary" type="espi-feed/ElectricPowerQualitySummary"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246" type="espi-entry/UsagePoint"/>
+              <published>2023-10-20T17:32:35.448812Z</published>
+              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <title>ElectricPowerQualitySummary</title>
+              <content>
+                <ElectricPowerQualitySummary xmlns="http://naesb.org/espi">
+                  <flickerPlt>1</flickerPlt>
+                  <flickerPst>2</flickerPst>
+                  <harmonicVoltage>3</harmonicVoltage>
+                  <longInterruptions>0</longInterruptions>
+                  <mainsVoltage>240100</mainsVoltage>
+                  <measurementProtocol>2</measurementProtocol>
+                  <powerFrequency>600</powerFrequency>
+                  <rapidVoltageChanges>0</rapidVoltageChanges>
+                  <shortInterruptions>2</shortInterruptions>
+                  <summaryInterval>
+                    <duration>2592000</duration>
+                    <start>1693540800</start>
+                  </summaryInterval>
+                  <supplyVoltageDips>1</supplyVoltageDips>
+                  <supplyVoltageImbalance>0</supplyVoltageImbalance>
+                  <supplyVoltageVariations>3</supplyVoltageVariations>
+                  <tempOvervoltage>0</tempOvervoltage>
+                </ElectricPowerQualitySummary>
+              </content>
+            </entry>
+          </feed>

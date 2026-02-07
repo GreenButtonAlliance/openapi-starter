@@ -292,3 +292,39 @@ components:
       $ref: 'components/responses/AtomFeed.yaml'
     AtomEntry:
       $ref: 'components/responses/AtomEntry.yaml'
+    AtomFeed_ApplicationInformation:
+      $ref: 'components/responses/AtomFeed_ApplicationInformation.yaml'
+    AtomEntry_ApplicationInformation:
+      $ref: 'components/responses/AtomEntry_ApplicationInformation.yaml'
+    AtomFeed_Authorization:
+      $ref: 'components/responses/AtomFeed_Authorization.yaml'
+    AtomEntry_Authorization:
+      $ref: 'components/responses/AtomEntry_Authorization.yaml'
+    AtomFeed_UsagePoint:
+      $ref: 'components/responses/AtomFeed_UsagePoint.yaml'
+    AtomEntry_UsagePoint:
+      $ref: 'components/responses/AtomEntry_UsagePoint.yaml'
+    AtomFeed_MeterReading:
+      $ref: 'components/responses/AtomFeed_MeterReading.yaml'
+    AtomEntry_MeterReading:
+      $ref: 'components/responses/AtomEntry_MeterReading.yaml'
+    AtomFeed_ReadingType:
+      $ref: 'components/responses/AtomFeed_ReadingType.yaml'
+    AtomEntry_ReadingType:
+      $ref: 'components/responses/AtomEntry_ReadingType.yaml'
+    AtomFeed_IntervalBlock:
+      $ref: 'components/responses/AtomFeed_IntervalBlock.yaml'
+    AtomEntry_IntervalBlock:
+      $ref: 'components/responses/AtomEntry_IntervalBlock.yaml'
+    AtomFeed_LocalTimeParameters:
+      $ref: 'components/responses/AtomFeed_LocalTimeParameters.yaml'
+    AtomEntry_LocalTimeParameters:
+      $ref: 'components/responses/AtomEntry_LocalTimeParameters.yaml'
+    AtomFeed_ElectricPowerQualitySummary:
+      $ref: 'components/responses/AtomFeed_ElectricPowerQualitySummary.yaml'
+    AtomEntry_ElectricPowerQualitySummary:
+      $ref: 'components/responses/AtomEntry_ElectricPowerQualitySummary.yaml'
+    AtomFeed_UsageSummary:
+      $ref: 'components/responses/AtomFeed_UsageSummary.yaml'
+    AtomEntry_UsageSummary:
+      $ref: 'components/responses/AtomEntry_UsageSummary.yaml'

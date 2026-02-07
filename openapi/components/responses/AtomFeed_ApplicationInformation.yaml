@@ -1,0 +1,64 @@
+description: >-
+  OK - Returns an Atom feed containing a collection of ApplicationInformation
+  entries.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomFeed.yaml'
+    examples:
+      ApplicationInformationFeed:
+        summary: A feed containing ApplicationInformation entries for registered Third Party Applications
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:7c9a4e82-3b57-5a01-9c4f-2d8e6b3a1f04</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ApplicationInformation" type="espi-feed/ApplicationInformation"/>
+            <title>ApplicationInformation</title>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <entry>
+              <id>urn:uuid:af6e8b01-3c52-5d19-84a3-7f2e9d4b6c08</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ApplicationInformation/247931" type="espi-entry/ApplicationInformation"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ApplicationInformation" type="espi-feed/ApplicationInformation"/>
+              <published>2023-10-20T17:32:35.448812Z</published>
+              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <title>ApplicationInformation</title>
+              <content>
+                <ApplicationInformation xmlns="http://naesb.org/espi">
+                  <dataCustodianId>DATA_CUSTODIAN_001</dataCustodianId>
+                  <dataCustodianApplicationStatus>3</dataCustodianApplicationStatus>
+                  <thirdPartyApplicationDescription>Energy analytics platform for residential customers</thirdPartyApplicationDescription>
+                  <thirdPartyApplicationStatus>3</thirdPartyApplicationStatus>
+                  <thirdPartyApplicationType>1</thirdPartyApplicationType>
+                  <thirdPartyApplicationUse>1</thirdPartyApplicationUse>
+                  <thirdPartyPhone>555-123-4567</thirdPartyPhone>
+                  <authorizationServerUri>https://data.greenbuttonconnect.org/DataCustodian</authorizationServerUri>
+                  <thirdPartyNotifyUri>https://thirdparty.example.com/espi/1_1/Notification</thirdPartyNotifyUri>
+                  <authorizationServerAuthorizationEndpoint>https://data.greenbuttonconnect.org/DataCustodian/oauth/authorize</authorizationServerAuthorizationEndpoint>
+                  <authorizationServerRegistrationEndpoint>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/register</authorizationServerRegistrationEndpoint>
+                  <authorizationServerTokenEndpoint>https://data.greenbuttonconnect.org/DataCustodian/oauth/token</authorizationServerTokenEndpoint>
+                  <dataCustodianBulkRequestURI>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Batch/Bulk</dataCustodianBulkRequestURI>
+                  <dataCustodianResourceEndpoint>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource</dataCustodianResourceEndpoint>
+                  <client_secret>secret_abcdef123456</client_secret>
+                  <logo_uri>https://thirdparty.example.com/logo.png</logo_uri>
+                  <client_name>GreenEnergy Analytics</client_name>
+                  <client_uri>https://thirdparty.example.com</client_uri>
+                  <redirect_uri>https://thirdparty.example.com/espi/1_1/OAuthCallBack</redirect_uri>
+                  <client_id>third_party_247931</client_id>
+                  <tos_uri>https://thirdparty.example.com/tos</tos_uri>
+                  <policy_uri>https://thirdparty.example.com/privacy</policy_uri>
+                  <software_id>GreenEnergy_Analytics</software_id>
+                  <software_version>2.1.0</software_version>
+                  <client_id_issued_at>1697823155</client_id_issued_at>
+                  <client_secret_expires_at>0</client_secret_expires_at>
+                  <contacts>admin@thirdparty.example.com</contacts>
+                  <token_endpoint_auth_method>client_secret_basic</token_endpoint_auth_method>
+                  <scope>FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39;IntervalDuration=900;BlockDuration=monthly;HistoryLength=13</scope>
+                  <grant_types>authorization_code</grant_types>
+                  <grant_types>client_credentials</grant_types>
+                  <grant_types>refresh_token</grant_types>
+                  <response_types>code</response_types>
+                  <registration_client_uri>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ApplicationInformation/247931</registration_client_uri>
+                  <registration_access_token>reg_token_d4e5f6a7b8c9</registration_access_token>
+                </ApplicationInformation>
+              </content>
+            </entry>
+          </feed>
