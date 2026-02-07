@@ -9,6 +9,9 @@ info:
     to exchange energy usage information using Atom-formatted XML feeds.
 
 
+    **Interactive API Explorer:** Try out the API using [Swagger UI](./swagger/)
+
+
     All resources are returned as Atom feeds (collections) or Atom entries
     (individual resources) using the `application/atom+xml` content type.
     The ESPI data elements are embedded within the Atom `<content>` element
