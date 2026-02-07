@@ -10,12 +10,12 @@ content:
         value: |
           <entry xmlns="http://www.w3.org/2005/Atom">
             <id>urn:uuid:e6896122-a094-5d30-be14-e44544247e14</id>
-            <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246" type="espi-entry/UsagePoint"/>
-            <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint" type="espi-feed/UsagePoint"/>
-            <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading" type="espi-feed/MeterReading"/>
-            <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/UsageSummary" type="espi-feed/UsageSummary"/>
-            <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/ElectricPowerQualitySummary" type="espi-feed/ElectricPowerQualitySummary"/>
-            <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407593_1455246" type="espi-entry/LocalTimeParameters"/>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246" type="espi-entry/UsagePoint"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint" type="espi-feed/UsagePoint"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading" type="espi-feed/MeterReading"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/UsageSummary" type="espi-feed/UsageSummary"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/ElectricPowerQualitySummary" type="espi-feed/ElectricPowerQualitySummary"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407593_1455246" type="espi-entry/LocalTimeParameters"/>
             <published>2023-10-20T17:32:35.448812Z</published>
             <updated>2023-10-20T17:33:23.054424Z</updated>
             <title>UsagePoint</title>
@@ -32,8 +32,8 @@ content:
         value: |
           <entry xmlns="http://www.w3.org/2005/Atom">
             <id>urn:uuid:305129b8-503c-5b50-b293-333cd7fb6adf</id>
-            <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407593_1455246" type="espi-entry/LocalTimeParameters"/>
-            <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/LocalTimeParameters" type="espi-feed/LocalTimeParameters"/>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407593_1455246" type="espi-entry/LocalTimeParameters"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/LocalTimeParameters" type="espi-feed/LocalTimeParameters"/>
             <published>2023-10-20T17:32:35.448812Z</published>
             <updated>2023-10-20T17:33:23.054424Z</updated>
             <title>LocalTimeParameters</title>
@@ -51,11 +51,11 @@ content:
         value: |
           <entry xmlns="http://www.w3.org/2005/Atom">
             <id>urn:uuid:6052217b-aadf-5cca-b803-c611f9fcf89e</id>
-            <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1" type="espi-entry/MeterReading"/>
-            <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading" type="espi-feed/MeterReading"/>
-            <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246" type="espi-entry/UsagePoint"/>
-            <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
-            <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/ReadingType/407593_1455246_Ba020673_kwh_1" type="espi-entry/ReadingType"/>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1" type="espi-entry/MeterReading"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading" type="espi-feed/MeterReading"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246" type="espi-entry/UsagePoint"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ReadingType/407593_1455246_Ba020673_kwh_1" type="espi-entry/ReadingType"/>
             <published>2023-10-20T17:32:44.801089Z</published>
             <updated>2023-10-20T17:32:44.801089Z</updated>
             <title>MeterReading</title>
@@ -68,8 +68,8 @@ content:
         value: |
           <entry xmlns="http://www.w3.org/2005/Atom">
             <id>urn:uuid:06ff0942-04fc-5f91-bc35-ca5e51b49dbb</id>
-            <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/ReadingType/407593_1455246_Ba020673_kwh_1" type="espi-entry/ReadingType"/>
-            <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/ReadingType" type="espi-feed/ReadingType"/>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ReadingType/407593_1455246_Ba020673_kwh_1" type="espi-entry/ReadingType"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ReadingType" type="espi-feed/ReadingType"/>
             <published>2023-10-20T17:32:44.801089Z</published>
             <updated>2023-10-20T17:32:44.801089Z</updated>
             <title>ReadingType</title>
@@ -92,9 +92,9 @@ content:
         value: |
           <entry xmlns="http://www.w3.org/2005/Atom">
             <id>urn:uuid:1e530409-5dbe-572f-aad8-fa06f6a68cfc</id>
-            <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock/000001" type="espi-entry/IntervalBlock"/>
-            <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
-            <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1" type="espi-feed/MeterReading"/>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock/000001" type="espi-entry/IntervalBlock"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1" type="espi-feed/MeterReading"/>
             <published>2023-10-20T17:32:44.801089Z</published>
             <updated>2023-10-20T17:32:44.801089Z</updated>
             <title>IntervalBlock</title>

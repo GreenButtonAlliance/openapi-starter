@@ -22,7 +22,7 @@ properties:
     description: The URI of the linked resource.
     type: string
     format: uri
-    example: https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246
+    example: https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246
     xml:
       attribute: true
   type:
@@ -35,5 +35,5 @@ properties:
       attribute: true
 example:
   rel: self
-  href: https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246
+  href: https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246
   type: espi-entry/UsagePoint
