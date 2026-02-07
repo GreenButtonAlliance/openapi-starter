@@ -1,0 +1,8 @@
+name: max-results
+in: query
+description: >-
+  The upper bound on the number of entries to be contained in the response.
+required: false
+schema:
+  type: integer
+  format: int64

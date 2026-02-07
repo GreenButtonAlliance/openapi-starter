@@ -1,0 +1,38 @@
+get:
+  tags:
+    - UsageSummary
+  summary: Retrieve all Usage Summaries [FB_32]
+  description: >-
+    Returns an Atom feed containing all Usage Summaries associated with
+    the specified Usage Point within the Subscription. Requires a valid
+    data_custodian_access_token or access_token.
+  operationId: findUsageSummaries
+  parameters:
+    - name: subscriptionId
+      in: path
+      description: The Subscription's ID.
+      required: true
+      schema:
+        type: string
+    - name: usagePointId
+      in: path
+      description: ID of the UsagePoint the Usage Summary references.
+      required: true
+      schema:
+        type: string
+    - $ref: '../components/parameters/published-max.yaml'
+    - $ref: '../components/parameters/published-min.yaml'
+    - $ref: '../components/parameters/updated-max.yaml'
+    - $ref: '../components/parameters/updated-min.yaml'
+    - $ref: '../components/parameters/max-results.yaml'
+    - $ref: '../components/parameters/start-index.yaml'
+    - $ref: '../components/parameters/depth.yaml'
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomFeed.yaml'
+    '400':
+      description: Bad Request - The request was malformed or contained invalid parameters.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.

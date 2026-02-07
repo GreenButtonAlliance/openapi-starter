@@ -1,0 +1,68 @@
+description: >-
+  An Atom entry element as defined in RFC 4287 section 4.1.2. In the ESPI
+  context, each entry wraps a single ESPI resource (such as UsagePoint,
+  MeterReading, IntervalBlock, etc.) within its content element.
+type: object
+xml:
+  name: entry
+  namespace: http://www.w3.org/2005/Atom
+required:
+  - id
+  - title
+  - updated
+  - published
+  - link
+  - content
+properties:
+  id:
+    description: >-
+      A permanent, universally unique identifier for the entry.
+      Must be a valid Type 5 UUID in the format urn:uuid:xxxxxxxx-xxxx-5xxx-xxxx-xxxxxxxxxxxx.
+    type: string
+    format: uri
+    example: urn:uuid:e6896122-a094-5d30-be14-e44544247e14
+    xml:
+      name: id
+      namespace: http://www.w3.org/2005/Atom
+  title:
+    description: A human-readable title for the entry.
+    type: string
+    example: UsagePoint
+    xml:
+      name: title
+      namespace: http://www.w3.org/2005/Atom
+  updated:
+    description: The most recent date and time when the entry was modified.
+    type: string
+    format: date-time
+    example: '2023-10-20T17:33:23.054424Z'
+    xml:
+      name: updated
+      namespace: http://www.w3.org/2005/Atom
+  published:
+    description: The date and time when the entry was originally created or first available.
+    type: string
+    format: date-time
+    example: '2023-10-20T17:32:35.448812Z'
+    xml:
+      name: published
+      namespace: http://www.w3.org/2005/Atom
+  link:
+    description: >-
+      References to related resources. Must include at least a 'self' link
+      and an 'up' link. May include 'related' links.
+    type: array
+    xml:
+      name: link
+      namespace: http://www.w3.org/2005/Atom
+      wrapped: false
+    items:
+      $ref: 'AtomLink.yaml'
+  content:
+    description: >-
+      The content of the entry, containing the ESPI resource element
+      in the http://naesb.org/espi namespace.
+    type: object
+    xml:
+      name: content
+      namespace: http://www.w3.org/2005/Atom

@@ -1,0 +1,62 @@
+description: >-
+  Contains attributes related to the configuration of the time service.
+  Describes how local time is derived from UTC, including daylight savings
+  time rules and timezone offset.
+type: object
+xml:
+  name: LocalTimeParameters
+  namespace: http://naesb.org/espi
+  prefix: espi
+required:
+  - dstEndRule
+  - dstOffset
+  - dstStartRule
+  - tzOffset
+properties:
+  dstEndRule:
+    description: >-
+      Rule to calculate end of daylight savings time in the current year.
+      Result of dstEndRule must be greater than result of dstStartRule.
+    type: string
+    pattern: '[0-9A-Fa-f]{8}'
+    example: B40E2000
+    xml:
+      name: dstEndRule
+      namespace: http://naesb.org/espi
+      prefix: espi
+  dstOffset:
+    description: Daylight savings time offset from local standard time, in seconds.
+    type: integer
+    format: int64
+    example: 3600
+    xml:
+      name: dstOffset
+      namespace: http://naesb.org/espi
+      prefix: espi
+  dstStartRule:
+    description: >-
+      Rule to calculate start of daylight savings time in the current year.
+      Result of dstEndRule must be greater than result of dstStartRule.
+    type: string
+    pattern: '[0-9A-Fa-f]{8}'
+    example: 360E2000
+    xml:
+      name: dstStartRule
+      namespace: http://naesb.org/espi
+      prefix: espi
+  tzOffset:
+    description: >-
+      Local time zone offset from UTC. Does not include any daylight savings
+      time offsets. Value is in seconds.
+    type: integer
+    format: int64
+    example: -18000
+    xml:
+      name: tzOffset
+      namespace: http://naesb.org/espi
+      prefix: espi
+example:
+  dstEndRule: B40E2000
+  dstOffset: 3600
+  dstStartRule: 360E2000
+  tzOffset: -18000

@@ -1,0 +1,24 @@
+get:
+  tags:
+    - ServiceStatus
+  summary: Obtain the Data Custodian Resource Server's Status [FB_3]
+  description: >-
+    Returns the current status of the Data Custodian Resource Server.
+    Requires a valid data_custodian_access_token, client_access_token,
+    or upload_access_token.
+  operationId: getServiceStatus
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      description: OK - Returns the current service status.
+      content:
+        application/atom+xml:
+          schema:
+            $ref: '../components/schemas/ServiceStatus.yaml'
+    '202':
+      description: Accepted - The request has been accepted for processing.
+    '400':
+      description: Bad Request - The request was malformed or contained invalid parameters.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.

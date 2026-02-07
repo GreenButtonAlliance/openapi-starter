@@ -1,0 +1,106 @@
+description: >-
+  Represents a permission granted by an owner for access to a resource.
+  Contains OAuth 2.0 authorization details including access tokens, scope,
+  and authorization status.
+type: object
+xml:
+  name: Authorization
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  authorizedPeriod:
+    $ref: 'DateTimeInterval.yaml'
+  publishedPeriod:
+    $ref: 'DateTimeInterval.yaml'
+  status:
+    description: >-
+      The status of this authorization.
+      0 = Revoked, 1 = Active, 2 = Denied.
+    type: integer
+    format: int32
+    xml:
+      name: status
+      namespace: http://naesb.org/espi
+      prefix: espi
+  expires_at:
+    description: >-
+      Expiration period for the access token, as a Unix epoch timestamp.
+    type: integer
+    format: int64
+    xml:
+      name: expires_at
+      namespace: http://naesb.org/espi
+      prefix: espi
+  grant_type:
+    description: Type of grant being negotiated for.
+    type: string
+    xml:
+      name: grant_type
+      namespace: http://naesb.org/espi
+      prefix: espi
+  scope:
+    description: Negotiated scope of the authorization.
+    type: string
+    maxLength: 256
+    xml:
+      name: scope
+      namespace: http://naesb.org/espi
+      prefix: espi
+  token_type:
+    description: Type of token used (e.g., Bearer).
+    type: string
+    xml:
+      name: token_type
+      namespace: http://naesb.org/espi
+      prefix: espi
+  error:
+    description: Contains last error returned to ThirdParty.
+    type: string
+    xml:
+      name: error
+      namespace: http://naesb.org/espi
+      prefix: espi
+  error_description:
+    description: Contains free text string describing last error returned to ThirdParty.
+    type: string
+    maxLength: 256
+    xml:
+      name: error_description
+      namespace: http://naesb.org/espi
+      prefix: espi
+  error_uri:
+    description: Specific error URI for last returned error.
+    type: string
+    format: uri
+    xml:
+      name: error_uri
+      namespace: http://naesb.org/espi
+      prefix: espi
+  resourceURI:
+    description: >-
+      URI that can be used to access the EUI data the Third Party is
+      authorized to access.
+    type: string
+    format: uri
+    xml:
+      name: resourceURI
+      namespace: http://naesb.org/espi
+      prefix: espi
+  authorizationURI:
+    description: URI that can be used to update or delete this Authorization.
+    type: string
+    format: uri
+    xml:
+      name: authorizationURI
+      namespace: http://naesb.org/espi
+      prefix: espi
+  customerResourceURI:
+    description: >-
+      URI that can be used to access PII data the Third Party is
+      authorized to access.
+    type: string
+    format: uri
+    xml:
+      name: customerResourceURI
+      namespace: http://naesb.org/espi
+      prefix: espi

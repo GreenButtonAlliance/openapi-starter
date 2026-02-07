@@ -1,0 +1,130 @@
+description: >-
+  A summary of power quality events. This information represents a summary
+  of power quality information typically required by customer facility
+  energy management systems. It is not intended to satisfy the detailed
+  requirements of power quality monitoring.
+type: object
+xml:
+  name: ElectricPowerQualitySummary
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  flickerPlt:
+    description: >-
+      A measurement of long term Rapid Voltage Change in hundredths of a
+      Volt.
+    type: integer
+    format: int64
+    xml:
+      name: flickerPlt
+      namespace: http://naesb.org/espi
+      prefix: espi
+  flickerPst:
+    description: >-
+      A value measured over 10 minutes that characterizes the likelihood
+      that voltage fluctuations would result in perceptible light flicker.
+    type: integer
+    format: int64
+    xml:
+      name: flickerPst
+      namespace: http://naesb.org/espi
+      prefix: espi
+  harmonicVoltage:
+    description: >-
+      A measurement of the Harmonic Voltage during the period.
+    type: integer
+    format: int64
+    xml:
+      name: harmonicVoltage
+      namespace: http://naesb.org/espi
+      prefix: espi
+  longInterruptions:
+    description: >-
+      Count of long duration voltage interruptions (input power
+      is zero for more than 60 seconds).
+    type: integer
+    format: int64
+    xml:
+      name: longInterruptions
+      namespace: http://naesb.org/espi
+      prefix: espi
+  mainsVoltage:
+    description: >-
+      RMS Voltage measured over the period.
+    type: integer
+    format: int64
+    xml:
+      name: mainsVoltage
+      namespace: http://naesb.org/espi
+      prefix: espi
+  measurementProtocol:
+    description: >-
+      Code indicating the standard used to measure power quality.
+    type: integer
+    format: int32
+    xml:
+      name: measurementProtocol
+      namespace: http://naesb.org/espi
+      prefix: espi
+  powerFrequency:
+    description: >-
+      Frequency in 1/10 Hz.
+    type: integer
+    format: int64
+    xml:
+      name: powerFrequency
+      namespace: http://naesb.org/espi
+      prefix: espi
+  rapidVoltageChanges:
+    description: >-
+      Count of rapid voltage changes.
+    type: integer
+    format: int64
+    xml:
+      name: rapidVoltageChanges
+      namespace: http://naesb.org/espi
+      prefix: espi
+  shortInterruptions:
+    description: >-
+      Count of short duration voltage interruptions (input power
+      is zero for less than 60 seconds).
+    type: integer
+    format: int64
+    xml:
+      name: shortInterruptions
+      namespace: http://naesb.org/espi
+      prefix: espi
+  summaryInterval:
+    $ref: 'DateTimeInterval.yaml'
+  supplyVoltageDips:
+    description: Count of supply voltage dips.
+    type: integer
+    format: int64
+    xml:
+      name: supplyVoltageDips
+      namespace: http://naesb.org/espi
+      prefix: espi
+  supplyVoltageImbalance:
+    description: Count of supply voltage imbalances.
+    type: integer
+    format: int64
+    xml:
+      name: supplyVoltageImbalance
+      namespace: http://naesb.org/espi
+      prefix: espi
+  supplyVoltageVariations:
+    description: Count of supply voltage variations.
+    type: integer
+    format: int64
+    xml:
+      name: supplyVoltageVariations
+      namespace: http://naesb.org/espi
+      prefix: espi
+  tempOvervoltage:
+    description: Count of temporary overvoltage events.
+    type: integer
+    format: int64
+    xml:
+      name: tempOvervoltage
+      namespace: http://naesb.org/espi
+      prefix: espi

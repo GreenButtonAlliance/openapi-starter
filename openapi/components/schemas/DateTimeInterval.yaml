@@ -1,0 +1,30 @@
+description: >-
+  Interval of date and time. End is not included because it can be derived
+  from the start and the duration.
+type: object
+xml:
+  name: DateTimeInterval
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  duration:
+    description: Duration of the interval, in seconds.
+    type: integer
+    format: int64
+    example: 2332800
+    xml:
+      name: duration
+      namespace: http://naesb.org/espi
+      prefix: espi
+  start:
+    description: Date and time that this interval started.
+    type: integer
+    format: int64
+    example: 1663992000
+    xml:
+      name: start
+      namespace: http://naesb.org/espi
+      prefix: espi
+example:
+  duration: 2332800
+  start: 1663992000

@@ -1,0 +1,53 @@
+get:
+  tags:
+    - IntervalBlock
+  summary: Retrieve an Interval Block by its ID within a Subscription [FB_32]
+  description: >-
+    Returns an Atom entry containing the Interval Block identified by the
+    given ID, within the specified Subscription, Usage Point, and Meter
+    Reading hierarchy. Requires a valid data_custodian_access_token or
+    access_token.
+  operationId: getIntervalBlockBySubscription
+  parameters:
+    - name: subscriptionId
+      in: path
+      description: ID of the Subscription.
+      required: true
+      schema:
+        type: string
+    - name: usagePointId
+      in: path
+      description: ID of the UsagePoint the Interval Block references.
+      required: true
+      schema:
+        type: string
+    - name: meterReadingId
+      in: path
+      description: ID of the MeterReading the Interval Block references.
+      required: true
+      schema:
+        type: string
+    - name: intervalBlockId
+      in: path
+      description: ID of the Interval Block to be retrieved.
+      required: true
+      schema:
+        type: string
+    - $ref: '../components/parameters/published-max.yaml'
+    - $ref: '../components/parameters/published-min.yaml'
+    - $ref: '../components/parameters/updated-max.yaml'
+    - $ref: '../components/parameters/updated-min.yaml'
+    - $ref: '../components/parameters/max-results.yaml'
+    - $ref: '../components/parameters/start-index.yaml'
+    - $ref: '../components/parameters/depth.yaml'
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry.yaml'
+    '202':
+      description: Accepted - The request has been accepted for processing.
+    '400':
+      description: Bad Request - The request was malformed or contained invalid parameters.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.

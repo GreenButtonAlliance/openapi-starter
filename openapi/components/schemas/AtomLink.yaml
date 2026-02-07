@@ -1,0 +1,39 @@
+description: >-
+  An Atom link element as defined in RFC 4287 section 3.4. Used to define
+  relationships between resources in the ESPI data model.
+type: object
+xml:
+  name: link
+  namespace: http://www.w3.org/2005/Atom
+  prefix: atom
+required:
+  - rel
+  - href
+  - type
+properties:
+  rel:
+    description: >-
+      The link relation type. Common values are 'self', 'up', and 'related'.
+    type: string
+    example: self
+    xml:
+      attribute: true
+  href:
+    description: The URI of the linked resource.
+    type: string
+    format: uri
+    example: https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246
+    xml:
+      attribute: true
+  type:
+    description: >-
+      The media type of the linked resource. For ESPI resources, this
+      follows the pattern 'espi-entry/{Resource}' or 'espi-feed/{Resource}'.
+    type: string
+    example: espi-entry/UsagePoint
+    xml:
+      attribute: true
+example:
+  rel: self
+  href: https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246
+  type: espi-entry/UsagePoint

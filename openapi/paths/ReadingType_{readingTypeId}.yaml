@@ -1,0 +1,33 @@
+get:
+  tags:
+    - ReadingType
+  summary: Retrieve a Reading Type by its ID [FB_32]
+  description: >-
+    Returns an Atom entry containing the Reading Type identified by the
+    given ID. Requires a valid data_custodian_access_token or access_token.
+  operationId: getReadingType
+  parameters:
+    - name: readingTypeId
+      in: path
+      description: ID of the Reading Type.
+      required: true
+      schema:
+        type: string
+    - $ref: '../components/parameters/published-max.yaml'
+    - $ref: '../components/parameters/published-min.yaml'
+    - $ref: '../components/parameters/updated-max.yaml'
+    - $ref: '../components/parameters/updated-min.yaml'
+    - $ref: '../components/parameters/max-results.yaml'
+    - $ref: '../components/parameters/start-index.yaml'
+    - $ref: '../components/parameters/depth.yaml'
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry.yaml'
+    '202':
+      description: Accepted - The request has been accepted for processing.
+    '400':
+      description: Bad Request - The request was malformed or contained invalid parameters.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.

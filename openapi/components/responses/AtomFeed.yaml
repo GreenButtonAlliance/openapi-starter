@@ -1,0 +1,225 @@
+description: >-
+  OK - Returns an Atom feed containing a collection of entries, each
+  wrapping an ESPI resource.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomFeed.yaml'
+    examples:
+      SubscriptionFeed:
+        summary: A complete Subscription feed with UsagePoint, LocalTimeParameters, MeterReading, ReadingType, and IntervalBlock entries
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:abf12767-5352-5615-b41a-fef23ba42bad</id>
+            <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Batch/Subscription/407593" type="espi-feed/Subscription"/>
+            <link rel="related" href="https://cert.greenbuttonalliance.org/certificate/26b96996-d393-5e95-b78d-9419f3080469" type="text/html"/>
+            <title>Subscription</title>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <entry>
+              <id>urn:uuid:e6896122-a094-5d30-be14-e44544247e14</id>
+              <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246" type="espi-entry/UsagePoint"/>
+              <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint" type="espi-feed/UsagePoint"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading" type="espi-feed/MeterReading"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/UsageSummary" type="espi-feed/UsageSummary"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/ElectricPowerQualitySummary" type="espi-feed/ElectricPowerQualitySummary"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407593_1455246" type="espi-entry/LocalTimeParameters"/>
+              <published>2023-10-20T17:32:35.448812Z</published>
+              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <title>UsagePoint</title>
+              <content>
+                <UsagePoint xmlns="http://naesb.org/espi">
+                  <ServiceCategory>
+                    <kind>0</kind>
+                  </ServiceCategory>
+                </UsagePoint>
+              </content>
+            </entry>
+            <entry>
+              <id>urn:uuid:305129b8-503c-5b50-b293-333cd7fb6adf</id>
+              <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407593_1455246" type="espi-entry/LocalTimeParameters"/>
+              <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/LocalTimeParameters" type="espi-feed/LocalTimeParameters"/>
+              <published>2023-10-20T17:32:35.448812Z</published>
+              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <title>LocalTimeParameters</title>
+              <content>
+                <LocalTimeParameters xmlns="http://naesb.org/espi">
+                  <dstEndRule>B40E2000</dstEndRule>
+                  <dstOffset>3600</dstOffset>
+                  <dstStartRule>360E2000</dstStartRule>
+                  <tzOffset>-18000</tzOffset>
+                </LocalTimeParameters>
+              </content>
+            </entry>
+            <entry>
+              <id>urn:uuid:6052217b-aadf-5cca-b803-c611f9fcf89e</id>
+              <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1" type="espi-entry/MeterReading"/>
+              <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading" type="espi-feed/MeterReading"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246" type="espi-entry/UsagePoint"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/ReadingType/407593_1455246_Ba020673_kwh_1" type="espi-entry/ReadingType"/>
+              <published>2023-10-20T17:32:44.801089Z</published>
+              <updated>2023-10-20T17:32:44.801089Z</updated>
+              <title>MeterReading</title>
+              <content>
+                <MeterReading xmlns="http://naesb.org/espi"/>
+              </content>
+            </entry>
+            <entry>
+              <id>urn:uuid:06ff0942-04fc-5f91-bc35-ca5e51b49dbb</id>
+              <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/ReadingType/407593_1455246_Ba020673_kwh_1" type="espi-entry/ReadingType"/>
+              <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/ReadingType" type="espi-feed/ReadingType"/>
+              <published>2023-10-20T17:32:44.801089Z</published>
+              <updated>2023-10-20T17:32:44.801089Z</updated>
+              <title>ReadingType</title>
+              <content>
+                <ReadingType xmlns="http://naesb.org/espi">
+                  <accumulationBehaviour>1</accumulationBehaviour>
+                  <commodity>1</commodity>
+                  <currency>840</currency>
+                  <flowDirection>1</flowDirection>
+                  <intervalLength>2332800</intervalLength>
+                  <kind>12</kind>
+                  <phase>0</phase>
+                  <powerOfTenMultiplier>-3</powerOfTenMultiplier>
+                  <uom>72</uom>
+                </ReadingType>
+              </content>
+            </entry>
+            <entry>
+              <id>urn:uuid:1e530409-5dbe-572f-aad8-fa06f6a68cfc</id>
+              <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock/000001" type="espi-entry/IntervalBlock"/>
+              <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1" type="espi-feed/MeterReading"/>
+              <published>2023-10-20T17:32:44.801089Z</published>
+              <updated>2023-10-20T17:32:44.801089Z</updated>
+              <title>IntervalBlock</title>
+              <content>
+                <IntervalBlock xmlns="http://naesb.org/espi">
+                  <interval>
+                    <duration>2332800</duration>
+                    <start>1663992000</start>
+                  </interval>
+                  <IntervalReading>
+                    <cost>115780000</cost>
+                    <timePeriod>
+                      <duration>2332800</duration>
+                      <start>1663992000</start>
+                    </timePeriod>
+                    <value>1330890000</value>
+                  </IntervalReading>
+                </IntervalBlock>
+              </content>
+            </entry>
+          </feed>
+      UsagePointFeed:
+        summary: A feed containing a collection of UsagePoint entries
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:abf12767-5352-5615-b41a-fef23ba42bad</id>
+            <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint" type="espi-feed/UsagePoint"/>
+            <title>UsagePoint</title>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <entry>
+              <id>urn:uuid:e6896122-a094-5d30-be14-e44544247e14</id>
+              <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246" type="espi-entry/UsagePoint"/>
+              <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint" type="espi-feed/UsagePoint"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading" type="espi-feed/MeterReading"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/UsageSummary" type="espi-feed/UsageSummary"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/ElectricPowerQualitySummary" type="espi-feed/ElectricPowerQualitySummary"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407593_1455246" type="espi-entry/LocalTimeParameters"/>
+              <published>2023-10-20T17:32:35.448812Z</published>
+              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <title>UsagePoint</title>
+              <content>
+                <UsagePoint xmlns="http://naesb.org/espi">
+                  <ServiceCategory>
+                    <kind>0</kind>
+                  </ServiceCategory>
+                </UsagePoint>
+              </content>
+            </entry>
+          </feed>
+      IntervalBlockFeed:
+        summary: A feed containing IntervalBlock entries with multiple billing periods
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:abf12767-5352-5615-b41a-fef23ba42bad</id>
+            <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+            <title>IntervalBlock</title>
+            <updated>2023-10-20T17:32:44.801089Z</updated>
+            <entry>
+              <id>urn:uuid:1e530409-5dbe-572f-aad8-fa06f6a68cfc</id>
+              <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock/000001" type="espi-entry/IntervalBlock"/>
+              <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020673_kwh_1" type="espi-feed/MeterReading"/>
+              <published>2023-10-20T17:32:44.801089Z</published>
+              <updated>2023-10-20T17:32:44.801089Z</updated>
+              <title>IntervalBlock</title>
+              <content>
+                <IntervalBlock xmlns="http://naesb.org/espi">
+                  <interval>
+                    <duration>2332800</duration>
+                    <start>1663992000</start>
+                  </interval>
+                  <IntervalReading>
+                    <cost>115780000</cost>
+                    <timePeriod>
+                      <duration>2332800</duration>
+                      <start>1663992000</start>
+                    </timePeriod>
+                    <value>1330890000</value>
+                  </IntervalReading>
+                </IntervalBlock>
+              </content>
+            </entry>
+            <entry>
+              <id>urn:uuid:0de5026c-9497-5712-99b0-9790101aee1b</id>
+              <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020674_kwh_1/IntervalBlock/000001" type="espi-entry/IntervalBlock"/>
+              <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020674_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020674_kwh_1" type="espi-feed/MeterReading"/>
+              <published>2023-10-20T17:32:44.814423Z</published>
+              <updated>2023-10-20T17:32:44.814423Z</updated>
+              <title>IntervalBlock</title>
+              <content>
+                <IntervalBlock xmlns="http://naesb.org/espi">
+                  <interval>
+                    <duration>2768400</duration>
+                    <start>1666411200</start>
+                  </interval>
+                  <IntervalReading>
+                    <cost>107994000</cost>
+                    <timePeriod>
+                      <duration>2768400</duration>
+                      <start>1666411200</start>
+                    </timePeriod>
+                    <value>1673810000</value>
+                  </IntervalReading>
+                </IntervalBlock>
+              </content>
+            </entry>
+            <entry>
+              <id>urn:uuid:fc2db972-9d83-5291-a92f-70b4ff108d35</id>
+              <link rel="self" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020675_kwh_1/IntervalBlock/000001" type="espi-entry/IntervalBlock"/>
+              <link rel="up" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020675_kwh_1/IntervalBlock" type="espi-feed/IntervalBlock"/>
+              <link rel="related" href="https://utilityapi.com/DataCustodian/espi/1_1/resource/Subscription/407593/UsagePoint/1455246/MeterReading/Ba020675_kwh_1" type="espi-feed/MeterReading"/>
+              <published>2023-10-20T17:32:44.824058Z</published>
+              <updated>2023-10-20T17:32:44.824058Z</updated>
+              <title>IntervalBlock</title>
+              <content>
+                <IntervalBlock xmlns="http://naesb.org/espi">
+                  <interval>
+                    <duration>2419200</duration>
+                    <start>1669266000</start>
+                  </interval>
+                  <IntervalReading>
+                    <cost>72088000</cost>
+                    <timePeriod>
+                      <duration>2419200</duration>
+                      <start>1669266000</start>
+                    </timePeriod>
+                    <value>1645190000</value>
+                  </IntervalReading>
+                </IntervalBlock>
+              </content>
+            </entry>
+          </feed>

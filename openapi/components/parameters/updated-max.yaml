@@ -1,0 +1,7 @@
+name: updated-max
+in: query
+description: The upper bound on the updated date of the resource.
+required: false
+schema:
+  type: string
+  format: date-time

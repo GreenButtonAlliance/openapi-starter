@@ -1,0 +1,58 @@
+description: A line item for additional cost details.
+type: object
+xml:
+  name: LineItem
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  amount:
+    description: The amount in hundred-thousandths of the currency.
+    type: integer
+    format: int64
+    xml:
+      name: amount
+      namespace: http://naesb.org/espi
+      prefix: espi
+  rounding:
+    description: The rounding amount in hundred-thousandths of the currency.
+    type: integer
+    format: int64
+    xml:
+      name: rounding
+      namespace: http://naesb.org/espi
+      prefix: espi
+  dateTime:
+    description: Date and time of the line item as a Unix epoch timestamp.
+    type: integer
+    format: int64
+    xml:
+      name: dateTime
+      namespace: http://naesb.org/espi
+      prefix: espi
+  note:
+    description: A note associated with the line item.
+    type: string
+    xml:
+      name: note
+      namespace: http://naesb.org/espi
+      prefix: espi
+  measurement:
+    $ref: 'SummaryMeasurement.yaml'
+  itemKind:
+    description: Code indicating the type of line item.
+    type: integer
+    format: int32
+    xml:
+      name: itemKind
+      namespace: http://naesb.org/espi
+      prefix: espi
+  unitCost:
+    description: Unit cost in hundred-thousandths of the currency.
+    type: integer
+    format: int64
+    xml:
+      name: unitCost
+      namespace: http://naesb.org/espi
+      prefix: espi
+  itemPeriod:
+    $ref: 'DateTimeInterval.yaml'

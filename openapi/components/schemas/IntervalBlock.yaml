@@ -1,0 +1,29 @@
+description: Time sequence of Readings of the same ReadingType.
+type: object
+xml:
+  name: IntervalBlock
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  interval:
+    $ref: 'DateTimeInterval.yaml'
+  IntervalReading:
+    description: One or more interval reading values measured by a meter or other asset.
+    type: array
+    xml:
+      name: IntervalReading
+      namespace: http://naesb.org/espi
+      prefix: espi
+      wrapped: false
+    items:
+      $ref: 'IntervalReading.yaml'
+example:
+  interval:
+    duration: 2332800
+    start: 1663992000
+  IntervalReading:
+    - cost: 115780000
+      timePeriod:
+        duration: 2332800
+        start: 1663992000
+      value: 1330890000
