@@ -1,0 +1,25 @@
+description: Contains the current status of the service.
+type: object
+xml:
+  name: ServiceStatus
+  namespace: http://naesb.org/espi
+  prefix: espi
+required:
+  - currentStatus
+properties:
+  currentStatus:
+    description: >-
+      The current status of the service.
+      1 = Online, 2 = Offline.
+    type: integer
+    format: int32
+    enum:
+      - 0
+      - 1
+    example: 1
+    xml:
+      name: currentStatus
+      namespace: http://naesb.org/espi
+      prefix: espi
+example:
+  currentStatus: 1

@@ -1,0 +1,8 @@
+name: depth
+in: query
+description: >-
+  The maximum number of entries to be transferred in the response.
+required: false
+schema:
+  type: integer
+  format: int64

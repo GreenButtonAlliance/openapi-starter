@@ -1,0 +1,7 @@
+name: published-min
+in: query
+description: The lower bound on the published date of the resource.
+required: false
+schema:
+  type: string
+  format: date-time

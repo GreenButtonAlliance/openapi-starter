@@ -1,0 +1,221 @@
+description: >-
+  Characteristics associated with all Readings included in a MeterReading.
+type: object
+xml:
+  name: ReadingType
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  accumulationBehaviour:
+    description: >-
+      Code indicating how value is accumulated over time for Readings of
+      this ReadingType.
+    type: integer
+    format: int32
+    example: 1
+    xml:
+      name: accumulationBehaviour
+      namespace: http://naesb.org/espi
+      prefix: espi
+  commodity:
+    description: Code for commodity classification of Readings of this ReadingType.
+    type: integer
+    format: int32
+    example: 1
+    xml:
+      name: commodity
+      namespace: http://naesb.org/espi
+      prefix: espi
+  consumptionTier:
+    description: >-
+      Code for consumption tier associated with a Reading of this
+      ReadingType.
+    type: integer
+    format: int32
+    xml:
+      name: consumptionTier
+      namespace: http://naesb.org/espi
+      prefix: espi
+  currency:
+    description: >-
+      Code for the currency for costs associated with this ReadingType.
+    type: integer
+    format: int32
+    example: 840
+    xml:
+      name: currency
+      namespace: http://naesb.org/espi
+      prefix: espi
+  dataQualifier:
+    description: >-
+      Code describing a salient attribute of Readings of this ReadingType.
+    type: integer
+    format: int32
+    xml:
+      name: dataQualifier
+      namespace: http://naesb.org/espi
+      prefix: espi
+  defaultQuality:
+    description: >-
+      Default value to be used if no value of ReadingQuality.quality is
+      provided.
+    type: integer
+    format: int32
+    xml:
+      name: defaultQuality
+      namespace: http://naesb.org/espi
+      prefix: espi
+  flowDirection:
+    description: Direction associated with current related Readings.
+    type: integer
+    format: int32
+    example: 1
+    xml:
+      name: flowDirection
+      namespace: http://naesb.org/espi
+      prefix: espi
+  intervalLength:
+    description: >-
+      Default interval length specified in seconds for Readings of this
+      ReadingType.
+    type: integer
+    format: int64
+    example: 2332800
+    xml:
+      name: intervalLength
+      namespace: http://naesb.org/espi
+      prefix: espi
+  kind:
+    description: >-
+      Code for general classification of a Reading of this ReadingType.
+    type: integer
+    format: int32
+    example: 12
+    xml:
+      name: kind
+      namespace: http://naesb.org/espi
+      prefix: espi
+  phase:
+    description: >-
+      Code for phase information associated with Readings of this
+      ReadingType.
+    type: integer
+    format: int32
+    example: 0
+    xml:
+      name: phase
+      namespace: http://naesb.org/espi
+      prefix: espi
+  powerOfTenMultiplier:
+    description: >-
+      Code for the power of ten multiplier which, when used in combination
+      with the uom, specifies the actual unit of measure.
+    type: integer
+    format: int32
+    example: -3
+    xml:
+      name: powerOfTenMultiplier
+      namespace: http://naesb.org/espi
+      prefix: espi
+  timeAttribute:
+    description: >-
+      Code used to specify a particular type of time interval method for
+      Readings of this ReadingType.
+    type: integer
+    format: int32
+    xml:
+      name: timeAttribute
+      namespace: http://naesb.org/espi
+      prefix: espi
+  tou:
+    description: Code for the TOU type of Readings of this ReadingType.
+    type: integer
+    format: int32
+    xml:
+      name: tou
+      namespace: http://naesb.org/espi
+      prefix: espi
+  uom:
+    description: >-
+      Code for the base unit of measure for Readings of this ReadingType.
+      Used in combination with the powerOfTenMultiplier to specify the
+      actual unit of measure.
+    type: integer
+    format: int32
+    example: 72
+    xml:
+      name: uom
+      namespace: http://naesb.org/espi
+      prefix: espi
+  cpp:
+    description: >-
+      Critical peak period (CPP) bucket the reading value is attributed to.
+      Value 0 means not applicable.
+    type: integer
+    format: int32
+    xml:
+      name: cpp
+      namespace: http://naesb.org/espi
+      prefix: espi
+  interharmonic:
+    description: >-
+      Indication of a harmonic or interharmonic basis for the measurement.
+    type: object
+    xml:
+      name: interharmonic
+      namespace: http://naesb.org/espi
+      prefix: espi
+    properties:
+      numerator:
+        type: integer
+        xml:
+          name: numerator
+          namespace: http://naesb.org/espi
+          prefix: espi
+      denominator:
+        type: integer
+        xml:
+          name: denominator
+          namespace: http://naesb.org/espi
+          prefix: espi
+  measuringPeriod:
+    description: >-
+      Time attribute inherent or fundamental to the reading value.
+    type: integer
+    format: int32
+    xml:
+      name: measuringPeriod
+      namespace: http://naesb.org/espi
+      prefix: espi
+  argument:
+    description: >-
+      Argument used to introduce numbers into the unit of measure
+      description where they are needed.
+    type: object
+    xml:
+      name: argument
+      namespace: http://naesb.org/espi
+      prefix: espi
+    properties:
+      numerator:
+        type: integer
+        xml:
+          name: numerator
+          namespace: http://naesb.org/espi
+          prefix: espi
+      denominator:
+        type: integer
+        xml:
+          name: denominator
+          namespace: http://naesb.org/espi
+          prefix: espi
+example:
+  accumulationBehaviour: 1
+  commodity: 1
+  currency: 840
+  flowDirection: 1
+  intervalLength: 2332800
+  kind: 12
+  phase: 0
+  powerOfTenMultiplier: -3
+  uom: 72

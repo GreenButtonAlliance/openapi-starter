@@ -1,0 +1,11 @@
+description: >-
+  Set of values obtained from the meter. The MeterReading resource acts as
+  a container linking IntervalBlock data with its associated ReadingType.
+  The content element is typically empty as the relationships are expressed
+  through Atom links rather than inline content.
+type: object
+xml:
+  name: MeterReading
+  namespace: http://naesb.org/espi
+  prefix: espi
+example: {}

@@ -1,0 +1,9 @@
+name: start-index
+in: query
+description: >-
+  The one-based offset in the DataCustodian's collection of resources
+  that should be transferred as the first entry of the response.
+required: false
+schema:
+  type: integer
+  format: int64

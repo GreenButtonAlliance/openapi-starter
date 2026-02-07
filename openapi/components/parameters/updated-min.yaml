@@ -1,0 +1,7 @@
+name: updated-min
+in: query
+description: The lower bound on the updated date of the resource.
+required: false
+schema:
+  type: string
+  format: date-time

@@ -1,0 +1,27 @@
+get:
+  tags:
+    - ApplicationInformation
+  summary: Retrieve an Application Information resource by its ID [FB_3]
+  description: >-
+    Returns an Atom entry containing the Application Information resource
+    identified by the given ID. Requires a valid data_custodian_access_token
+    or registration_access_token.
+  operationId: getApplicationInformation
+  parameters:
+    - name: applicationInformationId
+      in: path
+      description: The ID of the Application Information to be retrieved.
+      required: true
+      schema:
+        type: string
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry.yaml'
+    '202':
+      description: Accepted - The request has been accepted for processing.
+    '400':
+      description: Bad Request - The request was malformed or contained invalid parameters.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.

@@ -1,12 +1,17 @@
 # See https://redocly.com/docs/cli/configuration/ for more information.
 apis:
-  sample@v1: 
+  greenbutton@v1.1:
     root: openapi/openapi.yaml
 extends:
   - recommended
 rules:
   no-unused-components: error
   no-server-example.com: off
+  struct: error
+  # XML string examples for application/atom+xml cannot be validated against
+  # JSON object schemas; these warnings are expected false positives.
+  no-invalid-media-type-examples:
+    severity: off
 
 openapi:
   htmlTemplate: ./docs/index.html

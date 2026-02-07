@@ -1,0 +1,310 @@
+description: >-
+  Contains information about a Third Party Application requesting access to
+  the DataCustodian services. Information requested may include items such as
+  Organization Name, Website, Contact Info, Application Name, Description,
+  Icon, Type, default Notification and Callback endpoints.
+type: object
+xml:
+  name: ApplicationInformation
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  dataCustodianId:
+    description: Contains the identifier for the Data Custodian.
+    type: string
+    maxLength: 64
+    xml:
+      name: dataCustodianId
+      namespace: http://naesb.org/espi
+      prefix: espi
+  dataCustodianApplicationStatus:
+    description: >-
+      A code indicating the current status of the application.
+      1 = Review, 2 = Production (Revoked), 3 = OnHold, 4 = Revoked.
+    type: integer
+    format: int32
+    xml:
+      name: dataCustodianApplicationStatus
+      namespace: http://naesb.org/espi
+      prefix: espi
+  thirdPartyApplicationDescription:
+    description: A description of the application.
+    type: string
+    maxLength: 256
+    xml:
+      name: thirdPartyApplicationDescription
+      namespace: http://naesb.org/espi
+      prefix: espi
+  thirdPartyApplicationStatus:
+    description: >-
+      A code indicating the current status of the application.
+      1 = Development, 2 = Review Pending, 3 = Production, 4 = Retired.
+    type: integer
+    format: int32
+    xml:
+      name: thirdPartyApplicationStatus
+      namespace: http://naesb.org/espi
+      prefix: espi
+  thirdPartyApplicationType:
+    description: >-
+      A code indicating the type of the application.
+      1 = Web, 2 = Desktop, 3 = Mobile, 4 = Device.
+    type: integer
+    format: int32
+    xml:
+      name: thirdPartyApplicationType
+      namespace: http://naesb.org/espi
+      prefix: espi
+  thirdPartyApplicationUse:
+    description: >-
+      A code indicating the expected use of the application.
+      1 = EnergyManagement, 2 = Comparisons, 3 = Government,
+      4 = Academic, 5 = LawEnforcement.
+    type: integer
+    format: int32
+    xml:
+      name: thirdPartyApplicationUse
+      namespace: http://naesb.org/espi
+      prefix: espi
+  thirdPartyPhone:
+    description: The phone number of the organization.
+    type: string
+    maxLength: 32
+    xml:
+      name: thirdPartyPhone
+      namespace: http://naesb.org/espi
+      prefix: espi
+  authorizationServerUri:
+    description: Contains the base URI link to the authorization server.
+    type: string
+    format: uri
+    xml:
+      name: authorizationServerUri
+      namespace: http://naesb.org/espi
+      prefix: espi
+  thirdPartyNotifyUri:
+    description: URI used to notify ThirdParty that subscribed information is available.
+    type: string
+    format: uri
+    xml:
+      name: thirdPartyNotifyUri
+      namespace: http://naesb.org/espi
+      prefix: espi
+  authorizationServerAuthorizationEndpoint:
+    description: >-
+      An OAuth 2.0 URI used by the client to obtain authorization from
+      the resource owner via user-agent redirection.
+    type: string
+    format: uri
+    xml:
+      name: authorizationServerAuthorizationEndpoint
+      namespace: http://naesb.org/espi
+      prefix: espi
+  authorizationServerRegistrationEndpoint:
+    description: >-
+      A URI used by the client to register a Third Party with a Data
+      Custodian.
+    type: string
+    format: uri
+    xml:
+      name: authorizationServerRegistrationEndpoint
+      namespace: http://naesb.org/espi
+      prefix: espi
+  authorizationServerTokenEndpoint:
+    description: >-
+      An OAuth 2.0 URL used by the client to exchange an authorization
+      grant for an access token, typically with client authentication.
+    type: string
+    format: uri
+    xml:
+      name: authorizationServerTokenEndpoint
+      namespace: http://naesb.org/espi
+      prefix: espi
+  dataCustodianBulkRequestURI:
+    description: URI of DataCustodian's Bulk Request endpoint.
+    type: string
+    format: uri
+    xml:
+      name: dataCustodianBulkRequestURI
+      namespace: http://naesb.org/espi
+      prefix: espi
+  dataCustodianResourceEndpoint:
+    description: The resource server endpoint URI.
+    type: string
+    format: uri
+    xml:
+      name: dataCustodianResourceEndpoint
+      namespace: http://naesb.org/espi
+      prefix: espi
+  client_secret:
+    description: >-
+      A secret associated with this application, used to sign OAuth requests.
+    type: string
+    maxLength: 512
+    xml:
+      name: client_secret
+      namespace: http://naesb.org/espi
+      prefix: espi
+  logo_uri:
+    description: The link to the logo image for the application.
+    type: string
+    format: uri
+    xml:
+      name: logo_uri
+      namespace: http://naesb.org/espi
+      prefix: espi
+  client_name:
+    description: The name of the application.
+    type: string
+    maxLength: 256
+    xml:
+      name: client_name
+      namespace: http://naesb.org/espi
+      prefix: espi
+  client_uri:
+    description: The link to the main page of the application.
+    type: string
+    format: uri
+    xml:
+      name: client_uri
+      namespace: http://naesb.org/espi
+      prefix: espi
+  redirect_uri:
+    description: >-
+      The default redirect back to the application after authorization grant.
+    type: array
+    items:
+      type: string
+      format: uri
+    xml:
+      name: redirect_uri
+      namespace: http://naesb.org/espi
+      prefix: espi
+  client_id:
+    description: Contains the identifier for the Third Party (OAuth client_id).
+    type: string
+    maxLength: 64
+    xml:
+      name: client_id
+      namespace: http://naesb.org/espi
+      prefix: espi
+  tos_uri:
+    description: >-
+      A URI that points to a human-readable Terms of Service document for
+      the Third Party Application.
+    type: string
+    format: uri
+    xml:
+      name: tos_uri
+      namespace: http://naesb.org/espi
+      prefix: espi
+  policy_uri:
+    description: >-
+      A URI that points to a human-readable Policy document for the Third
+      Party Application.
+    type: string
+    format: uri
+    xml:
+      name: policy_uri
+      namespace: http://naesb.org/espi
+      prefix: espi
+  software_id:
+    description: An identifier for the software that comprises the Third Party Application.
+    type: string
+    maxLength: 256
+    xml:
+      name: software_id
+      namespace: http://naesb.org/espi
+      prefix: espi
+  software_version:
+    description: A version identifier for the Third Party Application software.
+    type: string
+    maxLength: 32
+    xml:
+      name: software_version
+      namespace: http://naesb.org/espi
+      prefix: espi
+  client_id_issued_at:
+    description: Time stamp at which this client_id was issued, as a Unix epoch timestamp.
+    type: integer
+    format: int64
+    xml:
+      name: client_id_issued_at
+      namespace: http://naesb.org/espi
+      prefix: espi
+  client_secret_expires_at:
+    description: >-
+      Date time at which this client_secret expires. Value of 0 means
+      the client_secret never expires.
+    type: integer
+    format: int64
+    xml:
+      name: client_secret_expires_at
+      namespace: http://naesb.org/espi
+      prefix: espi
+  contacts:
+    description: >-
+      Array of email addresses for people responsible for the Third
+      Party Application.
+    type: array
+    items:
+      type: string
+      maxLength: 256
+    xml:
+      name: contacts
+      namespace: http://naesb.org/espi
+      prefix: espi
+  token_endpoint_auth_method:
+    description: >-
+      The authentication method used by the OAuth 2.0 Token Endpoint.
+      client_secret_basic or client_secret_post.
+    type: string
+    xml:
+      name: token_endpoint_auth_method
+      namespace: http://naesb.org/espi
+      prefix: espi
+  scope:
+    description: >-
+      Space separated list of scope values the Third Party Application
+      may use when requesting access tokens.
+    type: array
+    items:
+      type: string
+      maxLength: 256
+    xml:
+      name: scope
+      namespace: http://naesb.org/espi
+      prefix: espi
+  grant_types:
+    description: Grant types this interface supports.
+    type: array
+    items:
+      type: string
+    xml:
+      name: grant_types
+      namespace: http://naesb.org/espi
+      prefix: espi
+  response_types:
+    description: Response types supported.
+    type: string
+    xml:
+      name: response_types
+      namespace: http://naesb.org/espi
+      prefix: espi
+  registration_client_uri:
+    description: >-
+      A URI used by a registered client to manage registration information.
+    type: string
+    xml:
+      name: registration_client_uri
+      namespace: http://naesb.org/espi
+      prefix: espi
+  registration_access_token:
+    description: >-
+      A credential obtained during Third Party registration with the Data
+      Custodian to enable access to the ApplicationInformation resource.
+    type: string
+    xml:
+      name: registration_access_token
+      namespace: http://naesb.org/espi
+      prefix: espi

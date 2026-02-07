@@ -1,0 +1,84 @@
+description: >-
+  Specific value measured by a meter or other asset. Each Reading is
+  associated with a specific ReadingType.
+type: object
+xml:
+  name: IntervalReading
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  cost:
+    description: Estimated cost associated with this reading, in hundred-thousandths of the currency.
+    type: integer
+    format: int64
+    example: 115780000
+    xml:
+      name: cost
+      namespace: http://naesb.org/espi
+      prefix: espi
+  ReadingQuality:
+    description: Quality of the reading value.
+    type: array
+    xml:
+      name: ReadingQuality
+      namespace: http://naesb.org/espi
+      prefix: espi
+      wrapped: false
+    items:
+      type: object
+      xml:
+        name: ReadingQuality
+        namespace: http://naesb.org/espi
+        prefix: espi
+      properties:
+        quality:
+          description: Quality of the reading value.
+          type: integer
+          format: int32
+          xml:
+            name: quality
+            namespace: http://naesb.org/espi
+            prefix: espi
+  timePeriod:
+    $ref: 'DateTimeInterval.yaml'
+  value:
+    description: The reading value.
+    type: integer
+    format: int64
+    example: 1330890000
+    xml:
+      name: value
+      namespace: http://naesb.org/espi
+      prefix: espi
+  consumptionTier:
+    description: Code for consumption tier associated with this reading.
+    type: integer
+    format: int32
+    xml:
+      name: consumptionTier
+      namespace: http://naesb.org/espi
+      prefix: espi
+  tou:
+    description: Code for the TOU type of this reading.
+    type: integer
+    format: int32
+    xml:
+      name: tou
+      namespace: http://naesb.org/espi
+      prefix: espi
+  cpp:
+    description: >-
+      Critical peak period (CPP) bucket the reading value is attributed to.
+      Value 0 means not applicable.
+    type: integer
+    format: int32
+    xml:
+      name: cpp
+      namespace: http://naesb.org/espi
+      prefix: espi
+example:
+  cost: 115780000
+  timePeriod:
+    duration: 2332800
+    start: 1663992000
+  value: 1330890000

@@ -1,0 +1,130 @@
+description: >-
+  An aggregation of usage information for a specific time period, billing
+  period, or billing item. Provides summary level data including billing
+  and cost information.
+type: object
+xml:
+  name: UsageSummary
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  billingPeriod:
+    $ref: 'DateTimeInterval.yaml'
+  billLastPeriod:
+    description: The bill amount for the previous billing period, in hundred-thousandths of the currency.
+    type: integer
+    format: int64
+    xml:
+      name: billLastPeriod
+      namespace: http://naesb.org/espi
+      prefix: espi
+  billToDate:
+    description: The bill amount for the current billing period to date, in hundred-thousandths of the currency.
+    type: integer
+    format: int64
+    xml:
+      name: billToDate
+      namespace: http://naesb.org/espi
+      prefix: espi
+  costAdditionalLastPeriod:
+    description: Additional charges from the last billing period, in hundred-thousandths of the currency.
+    type: integer
+    format: int64
+    xml:
+      name: costAdditionalLastPeriod
+      namespace: http://naesb.org/espi
+      prefix: espi
+  costAdditionalDetailLastPeriod:
+    description: Additional cost details for the last billing period.
+    type: array
+    xml:
+      name: costAdditionalDetailLastPeriod
+      namespace: http://naesb.org/espi
+      prefix: espi
+      wrapped: false
+    items:
+      $ref: 'LineItem.yaml'
+  currency:
+    description: Code for the currency used in this usage summary.
+    type: integer
+    format: int32
+    xml:
+      name: currency
+      namespace: http://naesb.org/espi
+      prefix: espi
+  overallConsumptionLastPeriod:
+    $ref: 'SummaryMeasurement.yaml'
+  currentBillingPeriodOverAllConsumption:
+    $ref: 'SummaryMeasurement.yaml'
+  currentDayLastYearNetConsumption:
+    $ref: 'SummaryMeasurement.yaml'
+  currentDayNetConsumption:
+    $ref: 'SummaryMeasurement.yaml'
+  currentDayOverallConsumption:
+    $ref: 'SummaryMeasurement.yaml'
+  peakDemand:
+    $ref: 'SummaryMeasurement.yaml'
+  previousDayLastYearOverallConsumption:
+    $ref: 'SummaryMeasurement.yaml'
+  previousDayNetConsumption:
+    $ref: 'SummaryMeasurement.yaml'
+  previousDayOverallConsumption:
+    $ref: 'SummaryMeasurement.yaml'
+  qualityOfReading:
+    description: Code indicating the quality of the reading.
+    type: integer
+    format: int32
+    xml:
+      name: qualityOfReading
+      namespace: http://naesb.org/espi
+      prefix: espi
+  ratchetDemand:
+    $ref: 'SummaryMeasurement.yaml'
+  ratchetDemandPeriod:
+    $ref: 'DateTimeInterval.yaml'
+  statusTimeStamp:
+    description: Date and time of the status of the usage summary, as a Unix epoch timestamp.
+    type: integer
+    format: int64
+    xml:
+      name: statusTimeStamp
+      namespace: http://naesb.org/espi
+      prefix: espi
+  commodity:
+    description: Code for commodity classification.
+    type: integer
+    format: int32
+    xml:
+      name: commodity
+      namespace: http://naesb.org/espi
+      prefix: espi
+  tariffProfile:
+    description: Name or identifier for the applicable tariff profile.
+    type: string
+    xml:
+      name: tariffProfile
+      namespace: http://naesb.org/espi
+      prefix: espi
+  readCycle:
+    description: Cycle day on which the meter will normally be read.
+    type: string
+    xml:
+      name: readCycle
+      namespace: http://naesb.org/espi
+      prefix: espi
+  tariffRiderRefs:
+    description: Reference to applicable tariff riders.
+    type: object
+    xml:
+      name: tariffRiderRefs
+      namespace: http://naesb.org/espi
+      prefix: espi
+    properties:
+      tariffRiderRef:
+        type: array
+        items:
+          type: string
+        xml:
+          name: tariffRiderRef
+          namespace: http://naesb.org/espi
+          prefix: espi

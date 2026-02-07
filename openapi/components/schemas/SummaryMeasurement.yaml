@@ -1,0 +1,49 @@
+description: An indicating of a quality of a reading value or set of values.
+type: object
+xml:
+  name: SummaryMeasurement
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  powerOfTenMultiplier:
+    description: >-
+      The power of ten multiplier part of the unit of measure, used in
+      combination with the uom to specify the actual unit of measure.
+    type: integer
+    format: int32
+    xml:
+      name: powerOfTenMultiplier
+      namespace: http://naesb.org/espi
+      prefix: espi
+  timeStamp:
+    description: The date and time of the reading, as a Unix epoch timestamp.
+    type: integer
+    format: int64
+    xml:
+      name: timeStamp
+      namespace: http://naesb.org/espi
+      prefix: espi
+  uom:
+    description: Unit of measure for the value.
+    type: integer
+    format: int32
+    xml:
+      name: uom
+      namespace: http://naesb.org/espi
+      prefix: espi
+  value:
+    description: The value in units specified by uom and powerOfTenMultiplier.
+    type: integer
+    format: int64
+    xml:
+      name: value
+      namespace: http://naesb.org/espi
+      prefix: espi
+  readingTypeRef:
+    description: Reference to the ReadingType for this measurement.
+    type: string
+    format: uri
+    xml:
+      name: readingTypeRef
+      namespace: http://naesb.org/espi
+      prefix: espi

@@ -1,0 +1,90 @@
+description: >-
+  Logical point on a network at which consumption or production is either
+  physically measured (e.g., metered) or estimated (e.g., unmetered street
+  lights).
+type: object
+xml:
+  name: UsagePoint
+  namespace: http://naesb.org/espi
+  prefix: espi
+properties:
+  roleFlags:
+    description: >-
+      Specifies the roles that this usage point has been assigned.
+      Bit 1 - isMirror, Bit 2 - isPremisesAggregationPoint,
+      Bit 3 - isPEV, Bit 4 - isDER, Bit 5 - isRevenueQuality,
+      Bit 6 - isDC, Bit 7-16 - Reserved.
+    type: string
+    pattern: '[0-9A-Fa-f]{4}'
+    example: '0010'
+    xml:
+      name: roleFlags
+      namespace: http://naesb.org/espi
+      prefix: espi
+  ServiceCategory:
+    description: Category of service provided to the customer.
+    type: object
+    xml:
+      name: ServiceCategory
+      namespace: http://naesb.org/espi
+      prefix: espi
+    properties:
+      kind:
+        description: >-
+          Service category kind.
+          0 = electricity, 1 = gas, 2 = water, 4 = heat, 5 = refuse,
+          6 = sewerage, 7 = rates, 8 = tvLicence, 9 = internet.
+        type: integer
+        format: int32
+        example: 0
+        xml:
+          name: kind
+          namespace: http://naesb.org/espi
+          prefix: espi
+    example:
+      kind: 0
+  status:
+    description: >-
+      Specifies the current status of this usage point.
+      0 = off, 1 = on.
+    type: integer
+    format: int32
+    example: 1
+    xml:
+      name: status
+      namespace: http://naesb.org/espi
+      prefix: espi
+  serviceDeliveryPoint:
+    description: >-
+      Contains service delivery point information about the UsagePoint
+      if it does represent the service delivery point.
+    type: object
+    xml:
+      name: serviceDeliveryPoint
+      namespace: http://naesb.org/espi
+      prefix: espi
+    properties:
+      name:
+        description: Name of the service delivery point.
+        type: string
+        xml:
+          name: name
+          namespace: http://naesb.org/espi
+          prefix: espi
+      tariffProfile:
+        description: Tariff profile for this service delivery point.
+        type: string
+        xml:
+          name: tariffProfile
+          namespace: http://naesb.org/espi
+          prefix: espi
+      customerAgreement:
+        description: Customer agreement identifier.
+        type: string
+        xml:
+          name: customerAgreement
+          namespace: http://naesb.org/espi
+          prefix: espi
+example:
+  ServiceCategory:
+    kind: 0

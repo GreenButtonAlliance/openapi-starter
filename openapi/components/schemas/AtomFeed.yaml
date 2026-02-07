@@ -1,0 +1,60 @@
+description: >-
+  An Atom feed element as defined in RFC 4287 section 4.1.1. In the ESPI
+  context, feeds contain collections of entries, each wrapping an ESPI
+  resource. The feed element uses the Atom namespace
+  http://www.w3.org/2005/Atom.
+type: object
+xml:
+  name: feed
+  namespace: http://www.w3.org/2005/Atom
+required:
+  - id
+  - title
+  - updated
+  - link
+properties:
+  id:
+    description: >-
+      A permanent, universally unique identifier for the feed.
+      Must be a valid Type 5 UUID in the format urn:uuid:xxxxxxxx-xxxx-5xxx-xxxx-xxxxxxxxxxxx.
+    type: string
+    format: uri
+    example: urn:uuid:abf12767-5352-5615-b41a-fef23ba42bad
+    xml:
+      name: id
+      namespace: http://www.w3.org/2005/Atom
+  title:
+    description: A human-readable title for the feed.
+    type: string
+    example: Subscription
+    xml:
+      name: title
+      namespace: http://www.w3.org/2005/Atom
+  updated:
+    description: The most recent date and time when the feed was modified.
+    type: string
+    format: date-time
+    example: '2023-10-20T17:33:23.054424Z'
+    xml:
+      name: updated
+      namespace: http://www.w3.org/2005/Atom
+  link:
+    description: >-
+      References to related resources. Must include at least a 'self' link.
+      May include a 'related' link.
+    type: array
+    xml:
+      name: link
+      namespace: http://www.w3.org/2005/Atom
+      wrapped: false
+    items:
+      $ref: 'AtomLink.yaml'
+  entry:
+    description: The entries contained in this feed.
+    type: array
+    xml:
+      name: entry
+      namespace: http://www.w3.org/2005/Atom
+      wrapped: false
+    items:
+      $ref: 'AtomEntry.yaml'

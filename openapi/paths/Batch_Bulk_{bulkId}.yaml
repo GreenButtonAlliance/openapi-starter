@@ -1,0 +1,65 @@
+get:
+  tags:
+    - Batch
+  summary: Request a Bulk transfer from a DataCustodian [FB_35]
+  description: >-
+    Initiates a bulk data transfer. Returns an Atom feed containing all
+    resources associated with the specified Bulk ID. Requires a valid
+    data_custodian_access_token or client_access_token.
+  operationId: downloadBulkData
+  parameters:
+    - name: bulkId
+      in: path
+      description: The Bulk ID as specified in the OAuth2 SCOPE string.
+      required: true
+      schema:
+        type: string
+    - $ref: '../components/parameters/published-max.yaml'
+    - $ref: '../components/parameters/published-min.yaml'
+    - $ref: '../components/parameters/updated-max.yaml'
+    - $ref: '../components/parameters/updated-min.yaml'
+    - $ref: '../components/parameters/max-results.yaml'
+    - $ref: '../components/parameters/start-index.yaml'
+    - $ref: '../components/parameters/depth.yaml'
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomFeed.yaml'
+    '202':
+      description: Accepted - The request has been accepted for processing.
+    '400':
+      description: Bad Request - The request was malformed or contained invalid parameters.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.
+post:
+  tags:
+    - Batch
+  summary: Upload a Bulk transfer file [FB_99]
+  description: >-
+    Uploads a Green Button XML file for bulk transfer. Requires a valid
+    data_custodian_access_token.
+  operationId: uploadBulkData
+  parameters:
+    - name: bulkId
+      in: path
+      description: The Bulk ID as specified in the OAuth2 SCOPE string.
+      required: true
+      schema:
+        type: string
+  security:
+    - oauth2: []
+  requestBody:
+    description: Green Button XML file contents to upload.
+    required: true
+    content:
+      application/xml:
+        schema:
+          type: string
+  responses:
+    '201':
+      description: Created - The bulk data was successfully uploaded.
+    '400':
+      description: Bad Request - The request was malformed or contained invalid XML.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.

@@ -1,122 +1,294 @@
-openapi: 3.1.0
+openapi: 3.0.0
 info:
-  version: 1.0.0
-  title: Example API
-  termsOfService: https://example.com/terms/
+  title: Green Button ESPI API
+  version: 1.1.0
+  description: >
+    The Green Button Energy Services Provider Interface (ESPI) API provides
+    RESTful access to energy usage data following the NAESB REQ.21 ESPI
+    standard. This API enables Data Custodians and Third Party Applications
+    to exchange energy usage information using Atom-formatted XML feeds.
+
+
+    All resources are returned as Atom feeds (collections) or Atom entries
+    (individual resources) using the `application/atom+xml` content type.
+    The ESPI data elements are embedded within the Atom `<content>` element
+    using the `http://naesb.org/espi` XML namespace.
+
+
+    # Authentication
+
+
+    This API uses OAuth 2.0 for authentication and authorization. Access
+    tokens are obtained through the standard OAuth 2.0 authorization code
+    flow or client credentials flow. The Bearer token must be provided in
+    the HTTP Authorization header for all API requests.
+
+
+    # Resource Hierarchy
+
+
+    The ESPI data model follows this hierarchy:
+
+    - **Subscription** > **UsagePoint** > **MeterReading** > **IntervalBlock**
+
+    - **UsagePoint** > **ElectricPowerQualitySummary**
+
+    - **UsagePoint** > **UsageSummary**
+
+    - **MeterReading** > **ReadingType** (referenced)
+
+    - **LocalTimeParameters** (standalone)
+
+
+    # Data Custodian vs Subscription Endpoints
+
+
+    Resources can be accessed through two patterns:
+
+    - **Data Custodian endpoints** (`/espi/1_1/resource/{Resource}`) - Used with
+      a `data_custodian_access_token` for administrative access to all resources.
+
+    - **Subscription endpoints** (`/espi/1_1/resource/Subscription/{subscriptionId}/...`) -
+      Used with a customer `access_token` for scoped access to authorized resources.
   contact:
-    name: Contact our support
-    email: contact@example.com
-    url: http://example.com/contact
+    name: Green Button Alliance
+    url: https://www.greenbuttonalliance.org
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   x-logo:
-    url: 'https://redocly.github.io/openapi-template/logo.png'
-    altText: OpenAPI example logo
-  description: >
-    This is an **example** API to demonstrate features of the OpenAPI
-    specification.
-
-    # Introduction
-
-    This API definition is intended to to be a good starting point for
-    describing your API in [OpenAPI/Swagger
-    format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md).
-
-    It also demonstrates features of the
-    [create-openapi-repo](https://github.com/Redocly/create-openapi-repo) tool
-    and the [Redoc](https://github.com/Redocly/Redoc) documentation engine. Beyond
-    the standard OpenAPI syntax, we use a few 
-    [vendor extensions](https://github.com/Redocly/Redoc/blob/main/docs/redoc-vendor-extensions.md).
-
-    # OpenAPI Specification
-
-    The goal of The OpenAPI Specification is to define a standard, language-agnostic interface to REST APIs which
-    allows both humans and computers to discover and understand the capabilities
-    of the service without access to source
-    code, documentation, or through network traffic inspection. When properly
-    defined via OpenAPI, a consumer can 
-    understand and interact with the remote service with a minimal amount of
-    implementation logic. Similar to what
-    interfaces have done for lower-level programming, OpenAPI removes the
-    guesswork in calling the service.
+    url: 'https://www.greenbuttonalliance.org/assets/logo.png'
+    altText: Green Button Alliance logo
 externalDocs:
-  description: "Find out how to create a GitHub repo for your OpenAPI definition."
-  url: 'https://github.com/Redocly/create-openapi-repo'
+  description: Green Button Alliance Developer Resources
+  url: 'https://www.greenbuttonalliance.org'
 tags:
-  - name: Echo
-    description: "Example echo operations."
-  - name: User
-    description: "Example actions on user accounts."
-  - name: Admin
-    description: "Example operations reserved for administrators."
-  - name: Info
-    description: "Example operations for retrieving information."
-  - name: Tag
-    description: "This is a tag description."
+  - name: ApplicationInformation
+    description: >-
+      Operations for managing Third Party Application registration
+      information with the Data Custodian.
+  - name: Authorization
+    description: >-
+      Operations for managing OAuth 2.0 authorizations that grant Third
+      Party Applications access to energy usage data.
+  - name: Batch
+    description: >-
+      Batch operations for bulk data transfer, subscription feeds, and
+      Green Button Download My Data / Connect My Data flows.
+  - name: UsagePoint
+    description: >-
+      Operations for accessing Usage Points, which represent logical points
+      on the network where energy consumption or production is measured.
+  - name: MeterReading
+    description: >-
+      Operations for accessing Meter Readings, which represent sets of
+      values obtained from a meter.
+  - name: IntervalBlock
+    description: >-
+      Operations for accessing Interval Blocks, which contain time
+      sequences of interval readings for a specific ReadingType.
+  - name: ReadingType
+    description: >-
+      Operations for accessing Reading Types, which describe the
+      characteristics of meter readings.
+  - name: LocalTimeParameters
+    description: >-
+      Operations for accessing Local Time Parameters, which describe
+      timezone and daylight savings time configuration.
+  - name: ElectricPowerQualitySummary
+    description: >-
+      Operations for accessing Electric Power Quality Summaries, which
+      provide power quality event information.
+  - name: UsageSummary
+    description: >-
+      Operations for accessing Usage Summaries, which provide aggregated
+      usage and billing information for specific time periods.
+  - name: ServiceStatus
+    description: >-
+      Operations for checking the current status of the Data Custodian
+      Resource Server.
 x-tagGroups:
-  - name: General
+  - name: OAuth Resources
     tags:
-      - User
-      - Info
-      - Echo
-  - name: Administration
+      - ApplicationInformation
+      - Authorization
+  - name: Batch Operations
     tags:
-      - Admin
+      - Batch
+  - name: Energy Usage Data
+    tags:
+      - UsagePoint
+      - MeterReading
+      - IntervalBlock
+      - ReadingType
+  - name: Summaries
+    tags:
+      - ElectricPowerQualitySummary
+      - UsageSummary
+  - name: Configuration
+    tags:
+      - LocalTimeParameters
+      - ServiceStatus
 servers:
-  - url: https://{tenant}/api/v1
-    variables:
-      tenant:
-        default: www
-        description: Your tenant id
-  - url: https://example.com/api/v1
+  - url: https://sandbox.greenbuttonalliance.org:8443/DataCustodian
+    description: Green Button Alliance Sandbox Server
 paths:
-  '/users/{username}':
-    $ref: 'paths/users_{username}.yaml'
-  '/user':
-    $ref: 'paths/user.yaml'
-  '/user/list':
-    $ref: 'paths/user-status.yaml'
-  /pathItem:
-    $ref: paths/pathItem.yaml
-  /pathItemWithExamples:
-    $ref: paths/pathItemWithExamples.yaml
-  '/echo':
-    $ref: 'paths/echo.yaml'
+  # ApplicationInformation
+  '/espi/1_1/resource/ApplicationInformation':
+    $ref: 'paths/ApplicationInformation.yaml'
+  '/espi/1_1/resource/ApplicationInformation/{applicationInformationId}':
+    $ref: 'paths/ApplicationInformation_{applicationInformationId}.yaml'
+
+  # Authorization
+  '/espi/1_1/resource/Authorization':
+    $ref: 'paths/Authorization.yaml'
+  '/espi/1_1/resource/Authorization/{authorizationId}':
+    $ref: 'paths/Authorization_{authorizationId}.yaml'
+
+  # Batch Operations
+  '/espi/1_1/resource/Batch/Bulk/{bulkId}':
+    $ref: 'paths/Batch_Bulk_{bulkId}.yaml'
+  '/espi/1_1/resource/Batch/Subscription/{subscriptionId}':
+    $ref: 'paths/Batch_Subscription_{subscriptionId}.yaml'
+  '/espi/1_1/resource/Batch/RetailCustomer/{retailCustomerId}/UsagePoint':
+    $ref: 'paths/Batch_RetailCustomer_{retailCustomerId}_UsagePoint.yaml'
+  '/espi/1_1/resource/Batch/Subscription/{subscriptionId}/UsagePoint/{usagePointId}':
+    $ref: 'paths/Batch_Subscription_{subscriptionId}_UsagePoint_{usagePointId}.yaml'
+
+  # UsagePoint - Data Custodian level
+  '/espi/1_1/resource/UsagePoint':
+    $ref: 'paths/UsagePoint.yaml'
+  '/espi/1_1/resource/UsagePoint/{usagePointId}':
+    $ref: 'paths/UsagePoint_{usagePointId}.yaml'
+
+  # UsagePoint - Subscription scoped
+  '/espi/1_1/resource/Subscription/{subscriptionId}/UsagePoint':
+    $ref: 'paths/Subscription_{subscriptionId}_UsagePoint.yaml'
+  '/espi/1_1/resource/Subscription/{subscriptionId}/UsagePoint/{usagePointId}':
+    $ref: 'paths/Subscription_{subscriptionId}_UsagePoint_{usagePointId}.yaml'
+
+  # MeterReading - Data Custodian level
+  '/espi/1_1/resource/MeterReading':
+    $ref: 'paths/MeterReading.yaml'
+  '/espi/1_1/resource/MeterReading/{meterReadingId}':
+    $ref: 'paths/MeterReading_{meterReadingId}.yaml'
+
+  # MeterReading - Subscription scoped
+  '/espi/1_1/resource/Subscription/{subscriptionId}/UsagePoint/{usagePointId}/MeterReading':
+    $ref: 'paths/Subscription_{subscriptionId}_UsagePoint_{usagePointId}_MeterReading.yaml'
+  '/espi/1_1/resource/Subscription/{subscriptionId}/UsagePoint/{usagePointId}/MeterReading/{meterReadingId}':
+    $ref: 'paths/Subscription_{subscriptionId}_UsagePoint_{usagePointId}_MeterReading_{meterReadingId}.yaml'
+
+  # IntervalBlock - Data Custodian level
+  '/espi/1_1/resource/IntervalBlock':
+    $ref: 'paths/IntervalBlock.yaml'
+  '/espi/1_1/resource/IntervalBlock/{intervalBlockId}':
+    $ref: 'paths/IntervalBlock_{intervalBlockId}.yaml'
+
+  # IntervalBlock - Subscription scoped
+  '/espi/1_1/resource/Subscription/{subscriptionId}/UsagePoint/{usagePointId}/MeterReading/{meterReadingId}/IntervalBlock':
+    $ref: 'paths/Subscription_{subscriptionId}_UsagePoint_{usagePointId}_MeterReading_{meterReadingId}_IntervalBlock.yaml'
+  '/espi/1_1/resource/Subscription/{subscriptionId}/UsagePoint/{usagePointId}/MeterReading/{meterReadingId}/IntervalBlock/{intervalBlockId}':
+    $ref: 'paths/Subscription_{subscriptionId}_UsagePoint_{usagePointId}_MeterReading_{meterReadingId}_IntervalBlock_{intervalBlockId}.yaml'
+
+  # ReadingType
+  '/espi/1_1/resource/ReadingType':
+    $ref: 'paths/ReadingType.yaml'
+  '/espi/1_1/resource/ReadingType/{readingTypeId}':
+    $ref: 'paths/ReadingType_{readingTypeId}.yaml'
+
+  # LocalTimeParameters
+  '/espi/1_1/resource/LocalTimeParameters':
+    $ref: 'paths/LocalTimeParameters.yaml'
+  '/espi/1_1/resource/LocalTimeParameters/{localTimeParameterId}':
+    $ref: 'paths/LocalTimeParameters_{localTimeParameterId}.yaml'
+
+  # ElectricPowerQualitySummary - Subscription scoped
+  '/espi/1_1/resource/Subscription/{subscriptionId}/UsagePoint/{usagePointId}/ElectricPowerQualitySummary':
+    $ref: 'paths/Subscription_{subscriptionId}_UsagePoint_{usagePointId}_ElectricPowerQualitySummary.yaml'
+  '/espi/1_1/resource/Subscription/{subscriptionId}/UsagePoint/{usagePointId}/ElectricPowerQualitySummary/{electricPowerQualitySummaryId}':
+    $ref: 'paths/Subscription_{subscriptionId}_UsagePoint_{usagePointId}_ElectricPowerQualitySummary_{electricPowerQualitySummaryId}.yaml'
+
+  # UsageSummary - Subscription scoped
+  '/espi/1_1/resource/Subscription/{subscriptionId}/UsagePoint/{usagePointId}/UsageSummary':
+    $ref: 'paths/Subscription_{subscriptionId}_UsagePoint_{usagePointId}_UsageSummary.yaml'
+  '/espi/1_1/resource/Subscription/{subscriptionId}/UsagePoint/{usagePointId}/UsageSummary/{usageSummaryId}':
+    $ref: 'paths/Subscription_{subscriptionId}_UsagePoint_{usagePointId}_UsageSummary_{usageSummaryId}.yaml'
+
+  # ServiceStatus
+  '/espi/1_1/resource/ReadServiceStatus':
+    $ref: 'paths/ReadServiceStatus.yaml'
+
 components:
   securitySchemes:
-    main_auth:
-      description: "Example description text of the OAuth2 scheme."
+    oauth2:
       type: oauth2
+      description: >-
+        OAuth 2.0 authorization for accessing Green Button ESPI resources.
+        Supports both Authorization Code flow (for customer-authorized access)
+        and Client Credentials flow (for Data Custodian administrative access).
       flows:
-        implicit:
-          authorizationUrl: http://example.com/api/oauth/dialog
+        authorizationCode:
+          authorizationUrl: https://sandbox.greenbuttonalliance.org:8443/DataCustodian/oauth/authorize
+          tokenUrl: https://sandbox.greenbuttonalliance.org:8443/DataCustodian/oauth/token
           scopes:
-            'read:users': read user info
-            'write:users': modify or remove users
-    api_key:
-      description: "Example description text of the API key scheme."
-      type: apiKey
-      in: header
-      name: api_key
-    basic_auth:
-      type: http
-      scheme: basic
-webhooks:
-  userInfo:
-    post:
-      summary: New user webhook
-      description: "Information about a new user in the system."
-      operationId: userInfo
-      tags:
-        - Info
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: 'components/schemas/User.yaml'
-      responses:
-        '200':
-          description: "Successfully retrieved information about a new user."
-      security:
-        - api_key: []
+            'FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39': Full Green Button scope
+        clientCredentials:
+          tokenUrl: https://sandbox.greenbuttonalliance.org:8443/DataCustodian/oauth/token
+          scopes:
+            'FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39': Full Green Button scope
+  parameters:
+    published-max:
+      $ref: 'components/parameters/published-max.yaml'
+    published-min:
+      $ref: 'components/parameters/published-min.yaml'
+    updated-max:
+      $ref: 'components/parameters/updated-max.yaml'
+    updated-min:
+      $ref: 'components/parameters/updated-min.yaml'
+    max-results:
+      $ref: 'components/parameters/max-results.yaml'
+    start-index:
+      $ref: 'components/parameters/start-index.yaml'
+    depth:
+      $ref: 'components/parameters/depth.yaml'
+  schemas:
+    AtomFeed:
+      $ref: 'components/schemas/AtomFeed.yaml'
+    AtomEntry:
+      $ref: 'components/schemas/AtomEntry.yaml'
+    AtomLink:
+      $ref: 'components/schemas/AtomLink.yaml'
+    ApplicationInformation:
+      $ref: 'components/schemas/ApplicationInformation.yaml'
+    Authorization:
+      $ref: 'components/schemas/Authorization.yaml'
+    UsagePoint:
+      $ref: 'components/schemas/UsagePoint.yaml'
+    MeterReading:
+      $ref: 'components/schemas/MeterReading.yaml'
+    ReadingType:
+      $ref: 'components/schemas/ReadingType.yaml'
+    IntervalBlock:
+      $ref: 'components/schemas/IntervalBlock.yaml'
+    IntervalReading:
+      $ref: 'components/schemas/IntervalReading.yaml'
+    ElectricPowerQualitySummary:
+      $ref: 'components/schemas/ElectricPowerQualitySummary.yaml'
+    UsageSummary:
+      $ref: 'components/schemas/UsageSummary.yaml'
+    LocalTimeParameters:
+      $ref: 'components/schemas/LocalTimeParameters.yaml'
+    ServiceStatus:
+      $ref: 'components/schemas/ServiceStatus.yaml'
+    DateTimeInterval:
+      $ref: 'components/schemas/DateTimeInterval.yaml'
+    SummaryMeasurement:
+      $ref: 'components/schemas/SummaryMeasurement.yaml'
+    LineItem:
+      $ref: 'components/schemas/LineItem.yaml'
+  responses:
+    AtomFeed:
+      $ref: 'components/responses/AtomFeed.yaml'
+    AtomEntry:
+      $ref: 'components/responses/AtomEntry.yaml'
