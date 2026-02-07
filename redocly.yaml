@@ -16,9 +16,45 @@ rules:
 openapi:
   htmlTemplate: ./docs/index.html
   theme:
+    logo:
+      gutter: 20px
+      # To add logo: Place logo.png in project root and uncomment below
+      # Then obtain license from: https://www.greenbuttonalliance.org/trademarks
+      # src: ./logo.png
+      # link: https://www.greenbuttonalliance.org/
     colors:
       primary:
-        main: "#32329f"
+        main: "#10a54a"  # Green Button green
+      success:
+        main: "#10a54a"
+      warning:
+        main: "#f39c12"
+      error:
+        main: "#e74c3c"
+      text:
+        primary: "#263238"
+        secondary: "#5f6c72"
+      http:
+        get: "#10a54a"
+        post: "#3498db"
+        put: "#f39c12"
+        delete: "#e74c3c"
+    typography:
+      fontSize: "16px"
+      fontFamily: '"Open Sans", sans-serif'
+      headings:
+        fontFamily: '"Montserrat", sans-serif'
+        fontWeight: "600"
+      code:
+        fontSize: "14px"
+        fontFamily: '"Source Code Pro", monospace'
+    sidebar:
+      backgroundColor: "#fafafa"
+      textColor: "#263238"
+      activeTextColor: "#10a54a"
+    rightPanel:
+      backgroundColor: "#263238"
+      textColor: "#ffffff"
   generateCodeSamples:
     languages:  # Array of language config objects; indicates in which languages to generate code samples.
       - lang: curl
