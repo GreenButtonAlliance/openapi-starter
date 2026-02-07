@@ -39,7 +39,7 @@ properties:
       Result of dstEndRule must be greater than result of dstStartRule.
     type: string
     pattern: '[0-9A-Fa-f]{8}'
-    example: 360E2000
+    example: '360E2000'
     xml:
       name: dstStartRule
       namespace: http://naesb.org/espi
@@ -56,7 +56,7 @@ properties:
       namespace: http://naesb.org/espi
       prefix: espi
 example:
-  dstEndRule: B40E2000
+  dstEndRule: 'B40E2000'
   dstOffset: 3600
-  dstStartRule: 360E2000
+  dstStartRule: '360E2000'
   tzOffset: -18000
