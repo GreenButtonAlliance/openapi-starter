@@ -1,0 +1,25 @@
+description: >-
+  OK - Returns an Atom entry containing a single CustomerAccount resource.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomEntry.yaml'
+    examples:
+      CustomerAccountEntry:
+        summary: A single CustomerAccount entry
+        value: |
+          <entry xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:e3f7b9d1-5c8a-6e4d-9f2b-7a1c5e8d3f6b</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAccount/123456" type="cust-entry/CustomerAccount"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAccount" type="cust-feed/CustomerAccount"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAccount/123456/CustomerAgreement" type="cust-feed/CustomerAgreement"/>
+            <title>CustomerAccount</title>
+            <published>2023-10-20T17:32:35.448812Z</published>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <content>
+              <CustomerAccount xmlns="http://naesb.org/espi/customer">
+                <billingCycle>15</billingCycle>
+                <accountId>ACC-123456</accountId>
+              </CustomerAccount>
+            </content>
+          </entry>
