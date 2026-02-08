@@ -1,0 +1,61 @@
+description: >-
+  A geographic or physical place, point, or area that may contain position
+  points and address information.
+type: object
+xml:
+  name: Location
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  type:
+    description: Type or category of location.
+    type: string
+    maxLength: 256
+    xml:
+      name: type
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  mainAddress:
+    description: Main address for the location.
+    $ref: './StreetAddress.yaml'
+  secondaryAddress:
+    description: Secondary or alternative address.
+    $ref: './StreetAddress.yaml'
+  phone1:
+    description: Primary phone number for location.
+    $ref: './TelephoneNumber.yaml'
+  phone2:
+    description: Secondary phone number for location.
+    $ref: './TelephoneNumber.yaml'
+  electronicAddress:
+    description: Electronic address information.
+    $ref: './ElectronicAddress.yaml'
+  geoInfoReference:
+    description: Reference to geographic information system data.
+    type: string
+    maxLength: 512
+    xml:
+      name: geoInfoReference
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  direction:
+    description: Directional information for finding location.
+    type: string
+    maxLength: 512
+    xml:
+      name: direction
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  status:
+    description: Status of this location.
+    $ref: './Status.yaml'
+  positionPoints:
+    description: Geographic coordinate points.
+    type: array
+    xml:
+      name: positionPoints
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+      wrapped: false
+    items:
+      $ref: './PositionPoint.yaml'

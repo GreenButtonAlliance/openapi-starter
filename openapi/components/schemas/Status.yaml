@@ -1,0 +1,40 @@
+description: >-
+  Current status information with timestamp and reason.
+type: object
+xml:
+  name: Status
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  value:
+    description: Status value or code.
+    type: string
+    maxLength: 256
+    xml:
+      name: value
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  dateTime:
+    description: Date and time of status (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: dateTime
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  remark:
+    description: Remarks or notes about the status.
+    type: string
+    maxLength: 512
+    xml:
+      name: remark
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  reason:
+    description: Reason for the status.
+    type: string
+    maxLength: 512
+    xml:
+      name: reason
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

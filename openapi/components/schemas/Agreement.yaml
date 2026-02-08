@@ -1,0 +1,23 @@
+description: >-
+  Formal agreement between parties with terms and conditions. Extends Document
+  to include signature date and validity period.
+type: object
+xml:
+  name: Agreement
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  document:
+    description: Base document properties.
+    $ref: './Document.yaml'
+  signDate:
+    description: Date agreement was signed (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: signDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  validityInterval:
+    description: Time period during which agreement is valid.
+    $ref: './DateTimeInterval.yaml'

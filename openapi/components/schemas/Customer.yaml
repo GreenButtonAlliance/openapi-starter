@@ -1,0 +1,72 @@
+description: >-
+  Organisation receiving services from service supplier.
+type: object
+xml:
+  name: Customer
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  organisation:
+    description: Customer's contact information.
+    $ref: './Organisation.yaml'
+  kind:
+    description: >-
+      Kind of customer.
+      0 = residential, 1 = residentialAndCommercial, 2 = residentialAndStreetlight,
+      3 = residentialStreetlightOthers, 4 = residentialFarmService,
+      5 = commercialIndustrial, 6 = pumpingLoad, 7 = windMachine,
+      8 = energyServiceSupplier, 9 = energyServiceScheduler, 10 = enterprise,
+      11 = regionalOperator, 12 = subsidiary, 13 = internalUse, 14 = other.
+    type: integer
+    format: int32
+    example: 0
+    xml:
+      name: kind
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  specialNeed:
+    description: Special service needs indicator.
+    type: string
+    maxLength: 256
+    xml:
+      name: specialNeed
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  vip:
+    description: Very important person indicator (deprecated).
+    type: boolean
+    xml:
+      name: vip
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  pucNumber:
+    description: Public utilities commission ID.
+    type: string
+    maxLength: 256
+    xml:
+      name: pucNumber
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  status:
+    description: Status of this customer.
+    $ref: './Status.yaml'
+  priority:
+    description: Priority of the customer.
+    $ref: './Priority.yaml'
+  locale:
+    description: Language and locale identifier.
+    type: string
+    maxLength: 256
+    example: en_US
+    xml:
+      name: locale
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  customerName:
+    description: Name of the customer.
+    type: string
+    maxLength: 256
+    xml:
+      name: customerName
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

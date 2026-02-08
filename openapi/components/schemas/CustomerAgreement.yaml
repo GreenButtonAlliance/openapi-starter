@@ -1,0 +1,85 @@
+description: >-
+  Agreement between customer and service supplier for service at a specific
+  service location. May contain demand response program participation and
+  applicable pricing structures.
+type: object
+xml:
+  name: CustomerAgreement
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  agreement:
+    description: Formal agreement terms and conditions.
+    $ref: './Agreement.yaml'
+  loadMgmt:
+    description: Load management program code.
+    type: string
+    maxLength: 256
+    xml:
+      name: loadMgmt
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  isPrePay:
+    description: Indicates if customer is on pre-pay program.
+    type: boolean
+    xml:
+      name: isPrePay
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  shutOffDateTime:
+    description: Date and time of final service billing (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: shutOffDateTime
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  DemandResponseProgram:
+    description: Demand response programs associated with this agreement.
+    type: array
+    xml:
+      name: DemandResponseProgram
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+      wrapped: false
+    items:
+      $ref: './DemandResponseProgram.yaml'
+  PricingStructures:
+    description: Applicable pricing structures for this agreement.
+    type: array
+    xml:
+      name: PricingStructures
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+      wrapped: false
+    items:
+      $ref: './PricingStructure.yaml'
+  currency:
+    description: >-
+      Currency used for monetary amounts. ISO 4217 currency codes.
+      840 = USD, 978 = EUR, 36 = AUD, 124 = CAD, 826 = GBP, 392 = JPY.
+    type: integer
+    format: int32
+    example: 840
+    xml:
+      name: currency
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  futureStatus:
+    description: Known future status changes for this agreement.
+    type: array
+    xml:
+      name: futureStatus
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+      wrapped: false
+    items:
+      $ref: './Status.yaml'
+  agreementId:
+    description: Unique agreement identifier.
+    type: string
+    maxLength: 256
+    xml:
+      name: agreementId
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

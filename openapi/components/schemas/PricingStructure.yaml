@@ -1,0 +1,11 @@
+description: >-
+  Reference to pricing structure or tariff applicable to agreement.
+  Represented as a URI reference.
+type: string
+format: uri
+maxLength: 512
+example: "https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ReadingType/1"
+xml:
+  name: PricingStructure
+  namespace: http://naesb.org/espi/customer
+  prefix: customer

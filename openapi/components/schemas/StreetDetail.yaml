@@ -1,0 +1,107 @@
+description: >-
+  Detailed street address components including number, name, and type.
+type: object
+xml:
+  name: StreetDetail
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  number:
+    description: Street number.
+    type: string
+    maxLength: 64
+    example: "123"
+    xml:
+      name: number
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  name:
+    description: Street name.
+    type: string
+    maxLength: 256
+    example: "Main"
+    xml:
+      name: name
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  suffix:
+    description: Street suffix (e.g., N, S, E, W).
+    type: string
+    maxLength: 64
+    xml:
+      name: suffix
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  prefix:
+    description: Street prefix direction.
+    type: string
+    maxLength: 64
+    xml:
+      name: prefix
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  type:
+    description: Street type (e.g., St, Ave, Rd, Blvd).
+    type: string
+    maxLength: 64
+    example: "St"
+    xml:
+      name: type
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  code:
+    description: Street code or identifier.
+    type: string
+    maxLength: 64
+    xml:
+      name: code
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  buildingName:
+    description: Building or complex name.
+    type: string
+    maxLength: 256
+    xml:
+      name: buildingName
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  suiteNumber:
+    description: Suite, apartment, or unit number.
+    type: string
+    maxLength: 64
+    example: "Apt 4B"
+    xml:
+      name: suiteNumber
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  addressGeneral:
+    description: General address field 1.
+    type: string
+    maxLength: 256
+    xml:
+      name: addressGeneral
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  addressGeneral2:
+    description: General address field 2.
+    type: string
+    maxLength: 256
+    xml:
+      name: addressGeneral2
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  addressGeneral3:
+    description: General address field 3.
+    type: string
+    maxLength: 256
+    xml:
+      name: addressGeneral3
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  withinTownLimits:
+    description: Indicates if address is within town limits.
+    type: boolean
+    xml:
+      name: withinTownLimits
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

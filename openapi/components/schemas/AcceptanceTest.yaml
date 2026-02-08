@@ -1,0 +1,43 @@
+description: >-
+  Asset acceptance test information.
+type: object
+xml:
+  name: AcceptanceTest
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  date:
+    description: Date of acceptance test (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: date
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  acceptanceInterval:
+    description: Time interval during which acceptance testing occurred.
+    $ref: './DateTimeInterval.yaml'
+  qualityTests:
+    description: Quality tests performed.
+    type: string
+    maxLength: 512
+    xml:
+      name: qualityTests
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  qualityDescription:
+    description: Description of quality assessment.
+    type: string
+    maxLength: 512
+    xml:
+      name: qualityDescription
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  qualityComment:
+    description: Comments on quality test results.
+    type: string
+    maxLength: 512
+    xml:
+      name: qualityComment
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

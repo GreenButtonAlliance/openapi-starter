@@ -1,0 +1,40 @@
+description: >-
+  Physical asset that performs the metering role of the usage point. Extends
+  EndDevice with meter-specific properties including form number and multipliers.
+type: object
+xml:
+  name: Meter
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  endDevice:
+    description: Description of the metering equipment and device characteristics.
+    $ref: './EndDevice.yaml'
+  formNumber:
+    description: Meter form designation per ANSI C12.10 standard.
+    type: string
+    maxLength: 256
+    example: "16S"
+    xml:
+      name: formNumber
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  MeterMultipliers:
+    description: All multipliers applicable to this meter for scaling readings.
+    type: array
+    xml:
+      name: MeterMultipliers
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+      wrapped: false
+    items:
+      $ref: './MeterMultiplier.yaml'
+  intervalLength:
+    description: Current interval length in seconds for meter readings.
+    type: integer
+    format: int32
+    example: 900
+    xml:
+      name: intervalLength
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

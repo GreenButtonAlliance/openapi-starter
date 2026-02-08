@@ -1,0 +1,46 @@
+description: >-
+  Notification of customer actions or events that may trigger billing or
+  service actions.
+type: object
+xml:
+  name: AccountNotification
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  methodKind:
+    description: >-
+      Method of notification delivery.
+      0 = email, 1 = letter, 2 = ivr (interactive voice response),
+      3 = sms, 4 = other.
+    type: integer
+    format: int32
+    xml:
+      name: methodKind
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  time:
+    description: Time of notification (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: time
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  note:
+    description: Notification message or note.
+    type: string
+    maxLength: 512
+    xml:
+      name: note
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  customerNotificationKind:
+    description: >-
+      Kind of customer notification.
+      0 = disconnect, 1 = shutoff, 2 = paymentDue, 3 = other.
+    type: integer
+    format: int32
+    xml:
+      name: customerNotificationKind
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

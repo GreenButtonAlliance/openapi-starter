@@ -1,0 +1,27 @@
+description: >-
+  Billing statement for services provided to a customer. Contains issue date
+  and references to statement documents.
+type: object
+xml:
+  name: Statement
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  issueDateTime:
+    description: Date and time the statement was issued (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: issueDateTime
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  statementRef:
+    description: References to statement document files and metadata.
+    type: array
+    xml:
+      name: statementRef
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+      wrapped: false
+    items:
+      $ref: './StatementRef.yaml'

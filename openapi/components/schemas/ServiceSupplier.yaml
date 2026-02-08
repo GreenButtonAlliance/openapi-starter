@@ -1,0 +1,41 @@
+description: >-
+  Organisation that provides utility or energy services to customers. May be
+  a utility, retailer, load serving entity, or other type of supplier.
+type: object
+xml:
+  name: ServiceSupplier
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  organisation:
+    description: Supplier's contact information and organizational details.
+    $ref: './Organisation.yaml'
+  kind:
+    description: >-
+      Kind of supplier.
+      0 = utility, 1 = retailer, 2 = LSE (Load Serving Entity),
+      3 = MDMA (Meter Data Management Agent), 4 = MSP (Meter Service Provider),
+      5 = other.
+    type: integer
+    format: int32
+    example: 0
+    xml:
+      name: kind
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  issuerIdentificationNumber:
+    description: ISO transaction reference number for the supplier.
+    type: string
+    maxLength: 256
+    xml:
+      name: issuerIdentificationNumber
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  effectiveDate:
+    description: Date when supplier service becomes effective (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: effectiveDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

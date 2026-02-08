@@ -1,0 +1,18 @@
+description: >-
+  Collection of all customer energy efficiency program enrollments and mappings.
+type: object
+xml:
+  name: ProgramDateIdMappings
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  programDateIdMapping:
+    description: Individual program date mapping with enrollment details.
+    type: array
+    xml:
+      name: programDateIdMapping
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+      wrapped: false
+    items:
+      $ref: './ProgramDateIdMapping.yaml'

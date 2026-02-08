@@ -1,0 +1,32 @@
+description: >-
+  Set of spatial coordinates describing a geographic point.
+type: object
+xml:
+  name: PositionPoint
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  xPosition:
+    description: X coordinate (longitude for geographic coordinates).
+    type: string
+    maxLength: 256
+    xml:
+      name: xPosition
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  yPosition:
+    description: Y coordinate (latitude for geographic coordinates).
+    type: string
+    maxLength: 256
+    xml:
+      name: yPosition
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  zPosition:
+    description: Z coordinate (elevation or altitude).
+    type: string
+    maxLength: 256
+    xml:
+      name: zPosition
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

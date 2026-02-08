@@ -1,0 +1,84 @@
+description: >-
+  Tangible resource of the utility, including power system equipment, vehicles,
+  plant, buildings, and metering devices.
+type: object
+xml:
+  name: Asset
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  type:
+    description: Type or category of asset.
+    type: string
+    maxLength: 256
+    xml:
+      name: type
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  utcNumber:
+    description: Utility-assigned unique identifier.
+    type: string
+    maxLength: 256
+    xml:
+      name: utcNumber
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  serialNumber:
+    description: Manufacturer serial number.
+    type: string
+    maxLength: 256
+    xml:
+      name: serialNumber
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  lotNumber:
+    description: Manufacturing lot number.
+    type: string
+    maxLength: 256
+    xml:
+      name: lotNumber
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  purchasePrice:
+    description: Purchase price of the asset.
+    type: number
+    format: double
+    xml:
+      name: purchasePrice
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  critical:
+    description: Indicates if asset is critical to operations.
+    type: boolean
+    xml:
+      name: critical
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  electronicAddress:
+    description: Electronic address for communicating with asset.
+    $ref: './ElectronicAddress.yaml'
+  lifecycle:
+    description: Lifecycle dates for the asset.
+    $ref: './LifecycleDate.yaml'
+  acceptanceTest:
+    description: Acceptance test information.
+    $ref: './AcceptanceTest.yaml'
+  initialCondition:
+    description: Initial condition assessment.
+    type: string
+    maxLength: 512
+    xml:
+      name: initialCondition
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  initialLossOfLife:
+    description: Initial loss of life percentage.
+    type: number
+    format: double
+    xml:
+      name: initialLossOfLife
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  status:
+    description: Current status of asset.
+    $ref: './Status.yaml'

@@ -1,0 +1,53 @@
+description: >-
+  Demand response program characteristics and enrollment information.
+type: object
+xml:
+  name: DemandResponseProgram
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  programName:
+    description: Name of the demand response program.
+    type: string
+    maxLength: 256
+    xml:
+      name: programName
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  enrollmentStatus:
+    description: >-
+      Enrollment status.
+      0 = unenrolled, 1 = enrolled, 2 = enrolledPending.
+    type: integer
+    format: int32
+    xml:
+      name: enrollmentStatus
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  programDescription:
+    description: Description of the program.
+    type: string
+    maxLength: 512
+    xml:
+      name: programDescription
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  programDate:
+    description: Program enrollment or termination date.
+    $ref: './ProgramDate.yaml'
+  capacityReservationLevel:
+    description: Reserved capacity level for this program.
+    type: number
+    format: double
+    xml:
+      name: capacityReservationLevel
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  DRProgramNomination:
+    description: Demand response program nomination details.
+    type: string
+    maxLength: 512
+    xml:
+      name: DRProgramNomination
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
