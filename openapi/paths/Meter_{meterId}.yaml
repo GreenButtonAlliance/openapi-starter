@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Customer Resources
+  summary: Retrieve a specific Meter [FB_55]
+  description: >-
+    Returns an Atom entry containing a single Meter resource identified by
+    meterId. Requires a valid data_custodian_access_token.
+  operationId: findMeterByIdDC
+  parameters:
+    - name: meterId
+      in: path
+      description: Unique identifier for the Meter resource
+      required: true
+      schema:
+        type: string
+        minLength: 6
+        example: "567890"
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry_Meter.yaml'
+    '400':
+      description: Bad Request - Invalid meterId format.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.
+    '404':
+      description: Not Found - Meter with specified ID not found.

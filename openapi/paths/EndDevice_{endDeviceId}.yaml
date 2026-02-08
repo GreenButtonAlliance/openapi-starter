@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Customer Resources
+  summary: Retrieve a specific End Device [FB_54]
+  description: >-
+    Returns an Atom entry containing a single EndDevice resource identified by
+    endDeviceId. Requires a valid data_custodian_access_token.
+  operationId: findEndDeviceByIdDC
+  parameters:
+    - name: endDeviceId
+      in: path
+      description: Unique identifier for the EndDevice resource
+      required: true
+      schema:
+        type: string
+        minLength: 6
+        example: "901234"
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry_EndDevice.yaml'
+    '400':
+      description: Bad Request - Invalid endDeviceId format.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.
+    '404':
+      description: Not Found - EndDevice with specified ID not found.

@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Customer Resources
+  summary: Retrieve a specific Statement [FB_57]
+  description: >-
+    Returns an Atom entry containing a single Statement resource identified by
+    statementId. Requires a valid data_custodian_access_token.
+  operationId: findStatementByIdDC
+  parameters:
+    - name: statementId
+      in: path
+      description: Unique identifier for the Statement resource
+      required: true
+      schema:
+        type: string
+        minLength: 6
+        example: "333444"
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry_Statement.yaml'
+    '400':
+      description: Bad Request - Invalid statementId format.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.
+    '404':
+      description: Not Found - Statement with specified ID not found.

@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Customer Resources
+  summary: Retrieve specific Program Date ID Mappings [FB_58]
+  description: >-
+    Returns an Atom entry containing a single ProgramDateIdMappings resource identified by
+    programDateIdMappingsId. Requires a valid data_custodian_access_token.
+  operationId: findProgramDateIdMappingsByIdDC
+  parameters:
+    - name: programDateIdMappingsId
+      in: path
+      description: Unique identifier for the ProgramDateIdMappings resource
+      required: true
+      schema:
+        type: string
+        minLength: 6
+        example: "555666"
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry_ProgramDateIdMappings.yaml'
+    '400':
+      description: Bad Request - Invalid programDateIdMappingsId format.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.
+    '404':
+      description: Not Found - ProgramDateIdMappings with specified ID not found.
