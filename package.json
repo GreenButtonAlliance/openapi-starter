@@ -6,7 +6,7 @@
   },
   "private": true,
   "scripts": {
-    "start": "redocly preview-docs",
+    "start": "redocly preview openapi/openapi.yaml",
     "start:swagger": "npx http-server dist -p 8081",
     "build": "npm run build:redocly && npm run build:swagger",
     "build:redocly": "redocly build-docs openapi/openapi.yaml -o dist/index.html",
