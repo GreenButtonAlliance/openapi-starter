@@ -27,6 +27,18 @@ fs.copyFileSync(
   path.join(swaggerDir, 'openapi.json')
 );
 
+// Copy GBA logo to swagger directory
+const docsDir = path.join(__dirname, '..', 'docs');
+const logoPath = path.join(docsDir, 'logo.png');
+if (fs.existsSync(logoPath)) {
+  fs.copyFileSync(logoPath, path.join(swaggerDir, 'logo.png'));
+}
+
+// Copy logo to root dist for easier reference
+if (fs.existsSync(logoPath)) {
+  fs.copyFileSync(logoPath, path.join(__dirname, '..', 'dist', 'logo.png'));
+}
+
 // Create custom Swagger UI HTML with Green Button branding
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -34,7 +46,7 @@ const html = `<!DOCTYPE html>
   <meta charset="UTF-8">
   <title>Green Button ESPI API - Swagger UI</title>
   <link rel="stylesheet" type="text/css" href="./swagger-ui.css" />
-  <link rel="icon" type="image/png" href="../../logo.png" />
+  <link rel="icon" type="image/png" href="./logo.png" />
   <style>
     html {
       box-sizing: border-box;
@@ -48,8 +60,20 @@ const html = `<!DOCTYPE html>
       margin: 0;
       padding: 0;
     }
+    /* GBA Logo in Swagger UI topbar */
     .topbar {
       background-color: #10a54a !important;
+    }
+    .topbar::before {
+      content: '';
+      background-image: url('./logo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 180px;
+      height: 50px;
+      display: inline-block;
+      margin: 10px 20px;
     }
     .topbar .link {
       display: flex;
