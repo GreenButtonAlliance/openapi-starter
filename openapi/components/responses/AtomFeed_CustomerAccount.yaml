@@ -10,21 +10,33 @@ content:
         value: |
           <feed xmlns="http://www.w3.org/2005/Atom">
             <id>urn:uuid:d5a9c8f2-4e6b-5d7a-8c3e-1f9b6a5d8c2e</id>
-            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAccount" type="cust-feed/CustomerAccount"/>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount" type="cust-feed/CustomerAccount"/>
             <title>CustomerAccount</title>
-            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <updated>2023-10-20T17:57:21.627755Z</updated>
             <entry>
-              <id>urn:uuid:e3f7b9d1-5c8a-6e4d-9f2b-7a1c5e8d3f6b</id>
-              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAccount/123456" type="cust-entry/CustomerAccount"/>
-              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAccount" type="cust-feed/CustomerAccount"/>
-              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAccount/123456/CustomerAgreement" type="cust-feed/CustomerAgreement"/>
+              <id>urn:uuid:118b34f4-64ab-5242-8ec9-bd2c6c2ae002</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe" type="cust-entry/CustomerAccount"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount" type="cust-feed/CustomerAccount"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement" type="cust-feed/CustomerAgreement"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e" type="cust-entry/Customer"/>
               <title>CustomerAccount</title>
-              <published>2023-10-20T17:32:35.448812Z</published>
-              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <published>2023-10-20T17:56:19.660350Z</published>
+              <updated>2023-10-20T17:57:21.627755Z</updated>
               <content>
                 <CustomerAccount xmlns="http://naesb.org/espi/customer">
-                  <billingCycle>15</billingCycle>
-                  <accountId>ACC-123456</accountId>
+                  <contactInfo>
+                    <streetAddress>
+                      <streetDetail>
+                        <addressGeneral>200 SECOND AVE</addressGeneral>
+                      </streetDetail>
+                      <townDetail>
+                        <name>OLDCASTLE</name>
+                        <stateOrProvince>ON</stateOrProvince>
+                      </townDetail>
+                      <postalCode>N9V 2T7</postalCode>
+                    </streetAddress>
+                  </contactInfo>
+                  <accountId>30000000-00</accountId>
                 </CustomerAccount>
               </content>
             </entry>

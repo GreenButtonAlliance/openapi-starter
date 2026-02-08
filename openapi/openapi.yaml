@@ -280,18 +280,74 @@ components:
       type: oauth2
       description: >-
         OAuth 2.0 authorization for accessing Green Button ESPI resources.
-        Supports both Authorization Code flow (for customer-authorized access)
-        and Client Credentials flow (for Data Custodian administrative access).
+
+
+        **Supported Flows:**
+
+        - **Authorization Code** - Used by Third Party Applications to access
+          customer-authorized resources
+
+        - **Client Credentials** - Used by Data Custodians for administrative
+          access to all resources
+
+
+        **Function Blocks (Scopes):**
+
+        The Green Button API uses ESPI Function Blocks to define access scopes.
+        Function blocks are specified in the format `FB=X_Y_Z` where each number
+        represents a specific capability:
+
+        - FB_1: Provide Subscription
+
+        - FB_3: Provide Usage Point List
+
+        - FB_4: Provide Usage Point
+
+        - FB_5: Provide Reading Type
+
+        - FB_8: Provide Meter Reading
+
+        - FB_13: Provide Interval Block
+
+        - FB_14: Provide Electric Power Quality Summary
+
+        - FB_15: Provide Electric Power Usage Summary
+
+        - FB_18: Provide Local Time Parameters
+
+        - FB_19: Provide Application Information
+
+        - FB_31: Provide Authorization
+
+        - FB_32: Provide Service Status
+
+        - FB_33: Provide Usage Points (Data Custodian)
+
+        - FB_34: Provide Batch Subscription
+
+        - FB_35: Provide Batch Bulk
+
+        - FB_37: Provide Batch RetailCustomer UsagePoint
+
+        - FB_39: Provide Batch Subscription UsagePoint
+
+        - FB_50-58: Provide Customer Resources
       flows:
         authorizationCode:
           authorizationUrl: https://sandbox.greenbuttonalliance.org:8443/DataCustodian/oauth/authorize
           tokenUrl: https://sandbox.greenbuttonalliance.org:8443/DataCustodian/oauth/token
           scopes:
-            'FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39': Full Green Button scope
+            'FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39_50_51_52_53_54_55_56_57_58': Full Green Button scope with customer resources
+            'FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39': Full Green Button scope (energy only)
+            'FB=4_5_8_13_14_15': Usage data and summaries
+            'FB=50_51_52_53_54_55_56_57_58': Customer and billing data
         clientCredentials:
           tokenUrl: https://sandbox.greenbuttonalliance.org:8443/DataCustodian/oauth/token
           scopes:
-            'FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39': Full Green Button scope
+            'FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39_50_51_52_53_54_55_56_57_58': Full Green Button scope with customer resources
+            'FB=1_3_4_5_8_13_14_15_18_19_31_32_33_34_35_37_39': Full Green Button scope (energy only)
+            'FB=4_5_8_13_14_15': Usage data and summaries
+            'FB=50_51_52_53_54_55_56_57_58': Customer and billing data
   parameters:
     published-max:
       $ref: 'components/parameters/published-max.yaml'
@@ -360,6 +416,52 @@ components:
       $ref: 'components/schemas/Statement.yaml'
     ProgramDateIdMappings:
       $ref: 'components/schemas/ProgramDateIdMappings.yaml'
+    Organisation:
+      $ref: 'components/schemas/Organisation.yaml'
+    StreetAddress:
+      $ref: 'components/schemas/StreetAddress.yaml'
+    StreetDetail:
+      $ref: 'components/schemas/StreetDetail.yaml'
+    TownDetail:
+      $ref: 'components/schemas/TownDetail.yaml'
+    TelephoneNumber:
+      $ref: 'components/schemas/TelephoneNumber.yaml'
+    ElectronicAddress:
+      $ref: 'components/schemas/ElectronicAddress.yaml'
+    Document:
+      $ref: 'components/schemas/Document.yaml'
+    Agreement:
+      $ref: 'components/schemas/Agreement.yaml'
+    Asset:
+      $ref: 'components/schemas/Asset.yaml'
+    Location:
+      $ref: 'components/schemas/Location.yaml'
+    PositionPoint:
+      $ref: 'components/schemas/PositionPoint.yaml'
+    Status:
+      $ref: 'components/schemas/Status.yaml'
+    Priority:
+      $ref: 'components/schemas/Priority.yaml'
+    LifecycleDate:
+      $ref: 'components/schemas/LifecycleDate.yaml'
+    AcceptanceTest:
+      $ref: 'components/schemas/AcceptanceTest.yaml'
+    MeterMultiplier:
+      $ref: 'components/schemas/MeterMultiplier.yaml'
+    AccountNotification:
+      $ref: 'components/schemas/AccountNotification.yaml'
+    DemandResponseProgram:
+      $ref: 'components/schemas/DemandResponseProgram.yaml'
+    ProgramDate:
+      $ref: 'components/schemas/ProgramDate.yaml'
+    ProgramDateIdMapping:
+      $ref: 'components/schemas/ProgramDateIdMapping.yaml'
+    StatementRef:
+      $ref: 'components/schemas/StatementRef.yaml'
+    PricingStructure:
+      $ref: 'components/schemas/PricingStructure.yaml'
+    BatchItemInfo:
+      $ref: 'components/schemas/BatchItemInfo.yaml'
   responses:
     AtomFeed:
       $ref: 'components/responses/AtomFeed.yaml'

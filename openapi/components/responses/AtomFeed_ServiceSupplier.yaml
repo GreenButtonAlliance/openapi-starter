@@ -10,19 +10,23 @@ content:
         value: |
           <feed xmlns="http://www.w3.org/2005/Atom">
             <id>urn:uuid:b9e7f5d4-8c6a-5e4d-9f2b-7a1c6e5d8b3f</id>
-            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceSupplier" type="cust-feed/ServiceSupplier"/>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ServiceSupplier" type="cust-feed/ServiceSupplier"/>
             <title>ServiceSupplier</title>
-            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <updated>2023-10-20T17:57:21.627755Z</updated>
             <entry>
-              <id>urn:uuid:c8f9e6d5-7b6a-5e4c-9f2d-8a1c6e5b7a3f</id>
-              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceSupplier/111222" type="cust-entry/ServiceSupplier"/>
-              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceSupplier" type="cust-feed/ServiceSupplier"/>
+              <id>urn:uuid:fe8d9d03-6c2e-5b6a-b6c2-4d19f11cc830</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ServiceSupplier/ddc37fc0-0417-588d-a928-c3d82a3e7dfd" type="cust-entry/ServiceSupplier"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ServiceSupplier" type="cust-feed/ServiceSupplier"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265" type="cust-entry/CustomerAgreement"/>
               <title>ServiceSupplier</title>
-              <published>2023-10-20T17:32:35.448812Z</published>
-              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <published>2023-10-20T17:56:20.594174Z</published>
+              <updated>2023-10-20T17:57:21.627755Z</updated>
               <content>
                 <ServiceSupplier xmlns="http://naesb.org/espi/customer">
-                  <kind>0</kind>
+                  <Organisation>
+                    <organisationName>Acme Energy Supplier</organisationName>
+                  </Organisation>
+                  <kind>retailer</kind>
                 </ServiceSupplier>
               </content>
             </entry>

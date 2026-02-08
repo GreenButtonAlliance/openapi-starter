@@ -10,21 +10,23 @@ content:
         value: |
           <feed xmlns="http://www.w3.org/2005/Atom">
             <id>urn:uuid:f2d8c9e5-6a7b-5c4d-8e3f-9b1a6c5d8e2f</id>
-            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAgreement" type="cust-feed/CustomerAgreement"/>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement" type="cust-feed/CustomerAgreement"/>
             <title>CustomerAgreement</title>
-            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <updated>2023-10-20T17:57:21.627755Z</updated>
             <entry>
-              <id>urn:uuid:a9f3c5e8-7b6d-5e4c-9f2a-8d1c6e5b3a7f</id>
-              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAgreement/789012" type="cust-entry/CustomerAgreement"/>
-              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAgreement" type="cust-feed/CustomerAgreement"/>
-              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAgreement/789012/ServiceLocation" type="cust-feed/ServiceLocation"/>
+              <id>urn:uuid:b4d2b756-7442-558e-bfb2-5c3288e92f04</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265" type="cust-entry/CustomerAgreement"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement" type="cust-feed/CustomerAgreement"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ServiceSupplier" type="cust-feed/ServiceSupplier"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ProgramDateIdMappings" type="cust-feed/ProgramDateIdMappings"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ServiceLocation" type="cust-feed/ServiceLocation"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe" type="cust-entry/CustomerAccount"/>
               <title>CustomerAgreement</title>
-              <published>2023-10-20T17:32:35.448812Z</published>
-              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <published>2023-10-20T17:56:20.594174Z</published>
+              <updated>2023-10-20T17:57:21.627755Z</updated>
               <content>
                 <CustomerAgreement xmlns="http://naesb.org/espi/customer">
-                  <currency>840</currency>
-                  <agreementId>AGR-789012</agreementId>
+                  <agreementId>30000000-00_004_electric</agreementId>
                 </CustomerAgreement>
               </content>
             </entry>
