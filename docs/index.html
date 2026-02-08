@@ -16,10 +16,45 @@
         margin: 0;
         padding: 0;
       }
+      /* GBA Logo injected into Redocly sidebar */
+      #gba-logo-container {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 10000;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        max-width: 200px;
+      }
+      #gba-logo-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      /* Adjust menu to avoid logo overlap */
+      div[role="navigation"] {
+        padding-top: 80px !important;
+      }
+      @media screen and (max-width: 50rem) {
+        #gba-logo-container {
+          position: static;
+          margin: 10px;
+          max-width: 150px;
+        }
+        div[role="navigation"] {
+          padding-top: 20px !important;
+        }
+      }
     </style>
     {{{redocHead}}}
   </head>
   <body>
+    <!-- GBA Logo -->
+    <div id="gba-logo-container">
+      <img src="logo.png" alt="Green Button Alliance" />
+    </div>
     {{{redocHTML}}}
   </body>
 </html>
