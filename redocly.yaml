@@ -16,9 +16,6 @@ rules:
 openapi:
   htmlTemplate: ./docs/index.html
   theme:
-    logo:
-      image: ./logo.png
-      link: https://www.greenbuttonalliance.org/
     colors:
       primary:
         main: "#10a54a"  # Green Button green
