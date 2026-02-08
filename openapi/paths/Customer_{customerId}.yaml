@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - Customer
   summary: Retrieve a specific Customer [FB_50]
   description: >-
     Returns an Atom entry containing a single Customer resource identified by

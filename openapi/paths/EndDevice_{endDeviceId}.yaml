@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - EndDevice
   summary: Retrieve a specific End Device [FB_54]
   description: >-
     Returns an Atom entry containing a single EndDevice resource identified by

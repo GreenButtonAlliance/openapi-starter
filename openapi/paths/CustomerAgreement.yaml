@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - CustomerAgreement
   summary: Retrieve all Customer Agreements [FB_52]
   description: >-
     Returns an Atom feed containing all CustomerAgreement resources within the Data

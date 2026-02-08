@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - ProgramDateIdMappings
   summary: Retrieve specific Program Date ID Mappings [FB_58]
   description: >-
     Returns an Atom entry containing a single ProgramDateIdMappings resource identified by

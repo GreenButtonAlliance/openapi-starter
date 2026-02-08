@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - Meter
   summary: Retrieve a specific Meter [FB_55]
   description: >-
     Returns an Atom entry containing a single Meter resource identified by

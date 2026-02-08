@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - EndDevice
   summary: Retrieve all End Devices [FB_54]
   description: >-
     Returns an Atom feed containing all EndDevice resources within the Data

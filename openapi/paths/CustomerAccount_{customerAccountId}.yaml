@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - CustomerAccount
   summary: Retrieve a specific Customer Account [FB_51]
   description: >-
     Returns an Atom entry containing a single CustomerAccount resource identified by

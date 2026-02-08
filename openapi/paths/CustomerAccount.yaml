@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - CustomerAccount
   summary: Retrieve all Customer Accounts [FB_51]
   description: >-
     Returns an Atom feed containing all CustomerAccount resources within the Data
