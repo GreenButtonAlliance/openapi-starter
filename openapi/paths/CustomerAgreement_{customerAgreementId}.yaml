@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Customer Resources
+  summary: Retrieve a specific Customer Agreement [FB_52]
+  description: >-
+    Returns an Atom entry containing a single CustomerAgreement resource identified by
+    customerAgreementId. Requires a valid data_custodian_access_token.
+  operationId: findCustomerAgreementByIdDC
+  parameters:
+    - name: customerAgreementId
+      in: path
+      description: Unique identifier for the CustomerAgreement resource
+      required: true
+      schema:
+        type: string
+        minLength: 6
+        example: "789012"
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry_CustomerAgreement.yaml'
+    '400':
+      description: Bad Request - Invalid customerAgreementId format.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.
+    '404':
+      description: Not Found - CustomerAgreement with specified ID not found.

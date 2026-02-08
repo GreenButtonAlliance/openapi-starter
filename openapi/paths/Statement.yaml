@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Customer Resources
+  summary: Retrieve all Statements [FB_57]
+  description: >-
+    Returns an Atom feed containing all Statement resources within the Data
+    Custodian. Requires a valid data_custodian_access_token. Statements are
+    billing statements for services provided to customers.
+  operationId: findStatementsDC
+  parameters:
+    - $ref: '../components/parameters/published-max.yaml'
+    - $ref: '../components/parameters/published-min.yaml'
+    - $ref: '../components/parameters/updated-max.yaml'
+    - $ref: '../components/parameters/updated-min.yaml'
+    - $ref: '../components/parameters/max-results.yaml'
+    - $ref: '../components/parameters/start-index.yaml'
+    - $ref: '../components/parameters/depth.yaml'
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomFeed_Statement.yaml'
+    '202':
+      description: Accepted - The request has been accepted for processing.
+    '400':
+      description: Bad Request - The request was malformed or contained invalid parameters.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.

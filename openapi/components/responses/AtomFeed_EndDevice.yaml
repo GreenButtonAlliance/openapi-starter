@@ -1,0 +1,30 @@
+description: >-
+  OK - Returns an Atom feed containing a collection of EndDevice entries.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomFeed.yaml'
+    examples:
+      EndDeviceFeed:
+        summary: A feed containing EndDevice resources
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:d8e9f5c3-7a6b-5e4d-9f2c-8a1d6e5c8b3f</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/EndDevice" type="cust-feed/EndDevice"/>
+            <title>EndDevice</title>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <entry>
+              <id>urn:uuid:e9f5d3c8-6b7a-5e4d-9f2c-7a1d6e5b8c3f</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/EndDevice/901234" type="cust-entry/EndDevice"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/EndDevice" type="cust-feed/EndDevice"/>
+              <title>EndDevice</title>
+              <published>2023-10-20T17:32:35.448812Z</published>
+              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <content>
+                <EndDevice xmlns="http://naesb.org/espi/customer">
+                  <isVirtual>false</isVirtual>
+                  <isPan>false</isPan>
+                </EndDevice>
+              </content>
+            </entry>
+          </feed>

@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Customer Resources
+  summary: Retrieve a specific Customer [FB_50]
+  description: >-
+    Returns an Atom entry containing a single Customer resource identified by
+    customerId. Requires a valid data_custodian_access_token.
+  operationId: findCustomerByIdDC
+  parameters:
+    - name: customerId
+      in: path
+      description: Unique identifier for the Customer resource
+      required: true
+      schema:
+        type: string
+        minLength: 6
+        example: "407630"
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry_Customer.yaml'
+    '400':
+      description: Bad Request - Invalid customerId format.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.
+    '404':
+      description: Not Found - Customer with specified ID not found.

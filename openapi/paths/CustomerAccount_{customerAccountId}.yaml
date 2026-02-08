@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Customer Resources
+  summary: Retrieve a specific Customer Account [FB_51]
+  description: >-
+    Returns an Atom entry containing a single CustomerAccount resource identified by
+    customerAccountId. Requires a valid data_custodian_access_token.
+  operationId: findCustomerAccountByIdDC
+  parameters:
+    - name: customerAccountId
+      in: path
+      description: Unique identifier for the CustomerAccount resource
+      required: true
+      schema:
+        type: string
+        minLength: 6
+        example: "123456"
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry_CustomerAccount.yaml'
+    '400':
+      description: Bad Request - Invalid customerAccountId format.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.
+    '404':
+      description: Not Found - CustomerAccount with specified ID not found.

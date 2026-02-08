@@ -1,0 +1,36 @@
+description: >-
+  Reference to billing statement document with file metadata.
+type: object
+xml:
+  name: StatementRef
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  fileName:
+    description: Name of the statement file.
+    type: string
+    maxLength: 256
+    xml:
+      name: fileName
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  mediaType:
+    description: >-
+      IANA media type of the document.
+      Examples: application/pdf, application/json, application/vnd.ms-excel.
+    type: string
+    maxLength: 256
+    example: "application/pdf"
+    xml:
+      name: mediaType
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  statementURL:
+    description: URL to retrieve the statement document.
+    type: string
+    format: uri
+    maxLength: 512
+    xml:
+      name: statementURL
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

@@ -1,0 +1,34 @@
+description: >-
+  Street and postal address information.
+type: object
+xml:
+  name: StreetAddress
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  streetDetail:
+    description: Detailed street address components.
+    $ref: './StreetDetail.yaml'
+  townDetail:
+    description: Town or city address components.
+    $ref: './TownDetail.yaml'
+  status:
+    description: Status of this address.
+    $ref: './Status.yaml'
+  postalCode:
+    description: Postal or ZIP code.
+    type: string
+    maxLength: 32
+    example: "94102"
+    xml:
+      name: postalCode
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  poBox:
+    description: Post office box number.
+    type: string
+    maxLength: 32
+    xml:
+      name: poBox
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

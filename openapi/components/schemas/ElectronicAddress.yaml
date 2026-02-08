@@ -1,0 +1,77 @@
+description: >-
+  Electronic contact information including email, web, LAN, and radio addresses.
+type: object
+xml:
+  name: ElectronicAddress
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  lan:
+    description: LAN address or identifier.
+    type: string
+    maxLength: 256
+    xml:
+      name: lan
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  mac:
+    description: MAC address.
+    type: string
+    maxLength: 256
+    pattern: '^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$'
+    example: "00:1A:2B:3C:4D:5E"
+    xml:
+      name: mac
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  email1:
+    description: Primary email address.
+    type: string
+    format: email
+    maxLength: 256
+    xml:
+      name: email1
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  email2:
+    description: Secondary email address.
+    type: string
+    format: email
+    maxLength: 256
+    xml:
+      name: email2
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  web:
+    description: Website URL.
+    type: string
+    format: uri
+    maxLength: 256
+    xml:
+      name: web
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  radio:
+    description: Radio address or identifier.
+    type: string
+    maxLength: 256
+    xml:
+      name: radio
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  userID:
+    description: User identifier.
+    type: string
+    maxLength: 256
+    xml:
+      name: userID
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  password:
+    description: Password (should be encrypted/hashed).
+    type: string
+    maxLength: 256
+    xml:
+      name: password
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

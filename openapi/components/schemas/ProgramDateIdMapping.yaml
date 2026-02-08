@@ -1,0 +1,52 @@
+description: >-
+  Energy efficiency program mapping with enrollment details.
+type: object
+xml:
+  name: ProgramDateIdMapping
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  programDateType:
+    description: >-
+      Type of program date.
+      0 = enrollment, 1 = termination, 2 = other.
+    type: integer
+    format: int32
+    xml:
+      name: programDateType
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  code:
+    description: Program code or identifier.
+    type: string
+    maxLength: 256
+    xml:
+      name: code
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  programName:
+    description: Name of the energy efficiency program.
+    type: string
+    maxLength: 256
+    xml:
+      name: programName
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  enrollmentDate:
+    description: Date of enrollment (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: enrollmentDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  enrollmentStatus:
+    description: >-
+      Enrollment status.
+      0 = unenrolled, 1 = enrolled, 2 = enrolledPending.
+    type: integer
+    format: int32
+    xml:
+      name: enrollmentStatus
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

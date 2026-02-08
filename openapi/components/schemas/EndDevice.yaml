@@ -1,0 +1,43 @@
+description: >-
+  Asset container that performs one or more end device functions such as
+  metering, load management, connect/disconnect, and accounting. May represent
+  physical or virtual devices.
+type: object
+xml:
+  name: EndDevice
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  asset:
+    description: Description of the equipment or device as an asset.
+    $ref: './Asset.yaml'
+  isVirtual:
+    description: Indicates if this is a virtual device (not physical hardware).
+    type: boolean
+    xml:
+      name: isVirtual
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  isPan:
+    description: Indicates if device is part of premises area network.
+    type: boolean
+    xml:
+      name: isPan
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  installCode:
+    description: Installation code for the device.
+    type: string
+    maxLength: 256
+    xml:
+      name: installCode
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  amrSystem:
+    description: Automated meter reading or communication system identifier.
+    type: string
+    maxLength: 256
+    xml:
+      name: amrSystem
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

@@ -1,0 +1,26 @@
+description: >-
+  OK - Returns an Atom entry containing a single Customer resource.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomEntry.yaml'
+    examples:
+      CustomerEntry:
+        summary: A single Customer entry
+        value: |
+          <entry xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:c8e5f2d9-3a7b-5e4c-9d1f-6b8a2c3e5d7f</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Customer/407630" type="cust-entry/Customer"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Customer" type="cust-feed/Customer"/>
+            <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Customer/407630/CustomerAccount" type="cust-feed/CustomerAccount"/>
+            <title>Customer</title>
+            <published>2023-10-20T17:32:35.448812Z</published>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <content>
+              <Customer xmlns="http://naesb.org/espi/customer">
+                <kind>0</kind>
+                <locale>en_US</locale>
+                <customerName>John Smith</customerName>
+              </Customer>
+            </content>
+          </entry>

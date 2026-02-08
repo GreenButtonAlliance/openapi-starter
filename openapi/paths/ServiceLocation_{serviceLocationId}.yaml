@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Customer Resources
+  summary: Retrieve a specific Service Location [FB_53]
+  description: >-
+    Returns an Atom entry containing a single ServiceLocation resource identified by
+    serviceLocationId. Requires a valid data_custodian_access_token.
+  operationId: findServiceLocationByIdDC
+  parameters:
+    - name: serviceLocationId
+      in: path
+      description: Unique identifier for the ServiceLocation resource
+      required: true
+      schema:
+        type: string
+        minLength: 6
+        example: "345678"
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry_ServiceLocation.yaml'
+    '400':
+      description: Bad Request - Invalid serviceLocationId format.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.
+    '404':
+      description: Not Found - ServiceLocation with specified ID not found.

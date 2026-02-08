@@ -1,0 +1,24 @@
+description: >-
+  Program enrollment or termination date with description.
+type: object
+xml:
+  name: ProgramDate
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  programDate:
+    description: Program date (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: programDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  programDateDescription:
+    description: Description of the program date (e.g., "enrollment", "termination").
+    type: string
+    maxLength: 256
+    xml:
+      name: programDateDescription
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

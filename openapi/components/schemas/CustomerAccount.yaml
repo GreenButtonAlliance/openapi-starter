@@ -1,0 +1,59 @@
+description: >-
+  Assignment of products and services (customer premise equipment) to a customer
+  for billing and payment purposes. Contains billing cycle information and
+  payment notifications.
+type: object
+xml:
+  name: CustomerAccount
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  document:
+    description: Basic account information including creation date and status.
+    $ref: './Document.yaml'
+  billingCycle:
+    description: Billing cycle day of the month (e.g., "15" for 15th of month).
+    type: string
+    maxLength: 256
+    example: "15"
+    xml:
+      name: billingCycle
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  budgetBill:
+    description: Budget billing code or identifier.
+    type: string
+    maxLength: 256
+    xml:
+      name: budgetBill
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  lastBillAmount:
+    description: Final bill amount before service shut-off (in currency minor units).
+    type: integer
+    format: int64
+    xml:
+      name: lastBillAmount
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  notifications:
+    description: Account notifications for customer actions.
+    type: array
+    xml:
+      name: notifications
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+      wrapped: false
+    items:
+      $ref: './AccountNotification.yaml'
+  contactInfo:
+    description: Billing contact information.
+    $ref: './Organisation.yaml'
+  accountId:
+    description: Unique account identifier.
+    type: string
+    maxLength: 256
+    xml:
+      name: accountId
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

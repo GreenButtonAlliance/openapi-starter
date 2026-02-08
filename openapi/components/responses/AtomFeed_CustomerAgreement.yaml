@@ -1,0 +1,31 @@
+description: >-
+  OK - Returns an Atom feed containing a collection of CustomerAgreement entries.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomFeed.yaml'
+    examples:
+      CustomerAgreementFeed:
+        summary: A feed containing CustomerAgreement resources
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:f2d8c9e5-6a7b-5c4d-8e3f-9b1a6c5d8e2f</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAgreement" type="cust-feed/CustomerAgreement"/>
+            <title>CustomerAgreement</title>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <entry>
+              <id>urn:uuid:a9f3c5e8-7b6d-5e4c-9f2a-8d1c6e5b3a7f</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAgreement/789012" type="cust-entry/CustomerAgreement"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAgreement" type="cust-feed/CustomerAgreement"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/CustomerAgreement/789012/ServiceLocation" type="cust-feed/ServiceLocation"/>
+              <title>CustomerAgreement</title>
+              <published>2023-10-20T17:32:35.448812Z</published>
+              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <content>
+                <CustomerAgreement xmlns="http://naesb.org/espi/customer">
+                  <currency>840</currency>
+                  <agreementId>AGR-789012</agreementId>
+                </CustomerAgreement>
+              </content>
+            </entry>
+          </feed>

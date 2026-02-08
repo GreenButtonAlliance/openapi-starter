@@ -4,9 +4,10 @@ info:
   version: 1.1.0
   description: >
     The Green Button Energy Services Provider Interface (ESPI) API provides
-    RESTful access to energy usage data following the NAESB REQ.21 ESPI
-    standard. This API enables Data Custodians and Third Party Applications
-    to exchange energy usage information using Atom-formatted XML feeds.
+    RESTful access to energy usage data and retail customer information following
+    the NAESB REQ.21 ESPI standard. This API enables Data Custodians and Third
+    Party Applications to exchange both energy usage information and customer/billing
+    data using Atom-formatted XML feeds.
 
 
     **Interactive API Explorer:** Try out the API using [Swagger UI](./swagger/)
@@ -15,7 +16,13 @@ info:
     All resources are returned as Atom feeds (collections) or Atom entries
     (individual resources) using the `application/atom+xml` content type.
     The ESPI data elements are embedded within the Atom `<content>` element
-    using the `http://naesb.org/espi` XML namespace.
+    using either the `http://naesb.org/espi` XML namespace (energy data) or
+    the `http://naesb.org/espi/customer` XML namespace (customer/billing data).
+
+
+    **Note:** Customer resources contain Personally Identifiable Information (PII)
+    and use a separate namespace (`http://naesb.org/espi/customer`). They cannot be
+    retrieved in the same request as energy usage data.
 
 
     # Authentication
@@ -110,6 +117,10 @@ tags:
     description: >-
       Operations for checking the current status of the Data Custodian
       Resource Server.
+  - name: Customer Resources
+    description: >-
+      Operations for accessing customer and billing information resources
+      (PII-containing). Uses the http://naesb.org/espi/customer namespace.
 x-tagGroups:
   - name: OAuth Resources
     tags:
@@ -132,6 +143,9 @@ x-tagGroups:
     tags:
       - LocalTimeParameters
       - ServiceStatus
+  - name: Customer Data
+    tags:
+      - Customer Resources
 servers:
   - url: https://sandbox.greenbuttonalliance.org:8443/DataCustodian
     description: Green Button Alliance Sandbox Server
@@ -222,6 +236,44 @@ paths:
   '/espi/1_1/resource/ReadServiceStatus':
     $ref: 'paths/ReadServiceStatus.yaml'
 
+  # Customer Resources - Data Custodian Access
+  '/espi/1_1/resource/Customer':
+    $ref: 'paths/Customer.yaml'
+  '/espi/1_1/resource/Customer/{customerId}':
+    $ref: 'paths/Customer_{customerId}.yaml'
+  '/espi/1_1/resource/CustomerAccount':
+    $ref: 'paths/CustomerAccount.yaml'
+  '/espi/1_1/resource/CustomerAccount/{customerAccountId}':
+    $ref: 'paths/CustomerAccount_{customerAccountId}.yaml'
+  '/espi/1_1/resource/CustomerAgreement':
+    $ref: 'paths/CustomerAgreement.yaml'
+  '/espi/1_1/resource/CustomerAgreement/{customerAgreementId}':
+    $ref: 'paths/CustomerAgreement_{customerAgreementId}.yaml'
+  '/espi/1_1/resource/ServiceLocation':
+    $ref: 'paths/ServiceLocation.yaml'
+  '/espi/1_1/resource/ServiceLocation/{serviceLocationId}':
+    $ref: 'paths/ServiceLocation_{serviceLocationId}.yaml'
+  '/espi/1_1/resource/EndDevice':
+    $ref: 'paths/EndDevice.yaml'
+  '/espi/1_1/resource/EndDevice/{endDeviceId}':
+    $ref: 'paths/EndDevice_{endDeviceId}.yaml'
+  '/espi/1_1/resource/Meter':
+    $ref: 'paths/Meter.yaml'
+  '/espi/1_1/resource/Meter/{meterId}':
+    $ref: 'paths/Meter_{meterId}.yaml'
+  '/espi/1_1/resource/ServiceSupplier':
+    $ref: 'paths/ServiceSupplier.yaml'
+  '/espi/1_1/resource/ServiceSupplier/{serviceSupplierId}':
+    $ref: 'paths/ServiceSupplier_{serviceSupplierId}.yaml'
+  '/espi/1_1/resource/Statement':
+    $ref: 'paths/Statement.yaml'
+  '/espi/1_1/resource/Statement/{statementId}':
+    $ref: 'paths/Statement_{statementId}.yaml'
+  '/espi/1_1/resource/ProgramDateIdMappings':
+    $ref: 'paths/ProgramDateIdMappings.yaml'
+  '/espi/1_1/resource/ProgramDateIdMappings/{programDateIdMappingsId}':
+    $ref: 'paths/ProgramDateIdMappings_{programDateIdMappingsId}.yaml'
+
 components:
   securitySchemes:
     oauth2:
@@ -290,6 +342,24 @@ components:
       $ref: 'components/schemas/SummaryMeasurement.yaml'
     LineItem:
       $ref: 'components/schemas/LineItem.yaml'
+    Customer:
+      $ref: 'components/schemas/Customer.yaml'
+    CustomerAccount:
+      $ref: 'components/schemas/CustomerAccount.yaml'
+    CustomerAgreement:
+      $ref: 'components/schemas/CustomerAgreement.yaml'
+    ServiceLocation:
+      $ref: 'components/schemas/ServiceLocation.yaml'
+    EndDevice:
+      $ref: 'components/schemas/EndDevice.yaml'
+    Meter:
+      $ref: 'components/schemas/Meter.yaml'
+    ServiceSupplier:
+      $ref: 'components/schemas/ServiceSupplier.yaml'
+    Statement:
+      $ref: 'components/schemas/Statement.yaml'
+    ProgramDateIdMappings:
+      $ref: 'components/schemas/ProgramDateIdMappings.yaml'
   responses:
     AtomFeed:
       $ref: 'components/responses/AtomFeed.yaml'
@@ -331,3 +401,39 @@ components:
       $ref: 'components/responses/AtomFeed_UsageSummary.yaml'
     AtomEntry_UsageSummary:
       $ref: 'components/responses/AtomEntry_UsageSummary.yaml'
+    AtomFeed_Customer:
+      $ref: 'components/responses/AtomFeed_Customer.yaml'
+    AtomEntry_Customer:
+      $ref: 'components/responses/AtomEntry_Customer.yaml'
+    AtomFeed_CustomerAccount:
+      $ref: 'components/responses/AtomFeed_CustomerAccount.yaml'
+    AtomEntry_CustomerAccount:
+      $ref: 'components/responses/AtomEntry_CustomerAccount.yaml'
+    AtomFeed_CustomerAgreement:
+      $ref: 'components/responses/AtomFeed_CustomerAgreement.yaml'
+    AtomEntry_CustomerAgreement:
+      $ref: 'components/responses/AtomEntry_CustomerAgreement.yaml'
+    AtomFeed_ServiceLocation:
+      $ref: 'components/responses/AtomFeed_ServiceLocation.yaml'
+    AtomEntry_ServiceLocation:
+      $ref: 'components/responses/AtomEntry_ServiceLocation.yaml'
+    AtomFeed_EndDevice:
+      $ref: 'components/responses/AtomFeed_EndDevice.yaml'
+    AtomEntry_EndDevice:
+      $ref: 'components/responses/AtomEntry_EndDevice.yaml'
+    AtomFeed_Meter:
+      $ref: 'components/responses/AtomFeed_Meter.yaml'
+    AtomEntry_Meter:
+      $ref: 'components/responses/AtomEntry_Meter.yaml'
+    AtomFeed_ServiceSupplier:
+      $ref: 'components/responses/AtomFeed_ServiceSupplier.yaml'
+    AtomEntry_ServiceSupplier:
+      $ref: 'components/responses/AtomEntry_ServiceSupplier.yaml'
+    AtomFeed_Statement:
+      $ref: 'components/responses/AtomFeed_Statement.yaml'
+    AtomEntry_Statement:
+      $ref: 'components/responses/AtomEntry_Statement.yaml'
+    AtomFeed_ProgramDateIdMappings:
+      $ref: 'components/responses/AtomFeed_ProgramDateIdMappings.yaml'
+    AtomEntry_ProgramDateIdMappings:
+      $ref: 'components/responses/AtomEntry_ProgramDateIdMappings.yaml'

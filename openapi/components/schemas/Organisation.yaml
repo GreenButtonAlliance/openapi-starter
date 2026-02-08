@@ -1,0 +1,32 @@
+description: >-
+  Organizational contact information including address, phone, and electronic
+  communication details.
+type: object
+xml:
+  name: Organisation
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  streetAddress:
+    description: Street and mailing address.
+    $ref: './StreetAddress.yaml'
+  postalAddress:
+    description: Alternative postal address if different from street address.
+    $ref: './StreetAddress.yaml'
+  phone1:
+    description: Primary telephone number.
+    $ref: './TelephoneNumber.yaml'
+  phone2:
+    description: Secondary telephone number.
+    $ref: './TelephoneNumber.yaml'
+  electronicAddress:
+    description: Electronic contact information (email, web, etc.).
+    $ref: './ElectronicAddress.yaml'
+  organisationName:
+    description: Name of the organization.
+    type: string
+    maxLength: 256
+    xml:
+      name: organisationName
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

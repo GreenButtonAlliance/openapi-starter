@@ -1,0 +1,26 @@
+description: >-
+  Meter multiplier information for scaling meter readings.
+type: object
+xml:
+  name: MeterMultiplier
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  kind:
+    description: >-
+      Kind of multiplier.
+      0 = kH (disk revolution constant), 1 = transformerRatio, 2 = other.
+    type: integer
+    format: int32
+    xml:
+      name: kind
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  value:
+    description: Multiplier value.
+    type: number
+    format: double
+    xml:
+      name: value
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

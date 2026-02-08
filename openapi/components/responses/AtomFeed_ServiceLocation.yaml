@@ -1,0 +1,30 @@
+description: >-
+  OK - Returns an Atom feed containing a collection of ServiceLocation entries.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomFeed.yaml'
+    examples:
+      ServiceLocationFeed:
+        summary: A feed containing ServiceLocation resources
+        value: |
+          <feed xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:b5e8f3c9-6d7a-5c4e-8f2b-9a1c6d5e8b3f</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceLocation" type="cust-feed/ServiceLocation"/>
+            <title>ServiceLocation</title>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <entry>
+              <id>urn:uuid:c7f9e5d2-8a6b-5e4c-9f3a-7d1c6e5b8a2f</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceLocation/345678" type="cust-entry/ServiceLocation"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceLocation" type="cust-feed/ServiceLocation"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceLocation/345678/EndDevice" type="cust-feed/EndDevice"/>
+              <title>ServiceLocation</title>
+              <published>2023-10-20T17:32:35.448812Z</published>
+              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <content>
+                <ServiceLocation xmlns="http://naesb.org/espi/customer">
+                  <needsInspection>false</needsInspection>
+                </ServiceLocation>
+              </content>
+            </entry>
+          </feed>

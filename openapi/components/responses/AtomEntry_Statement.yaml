@@ -1,0 +1,23 @@
+description: >-
+  OK - Returns an Atom entry containing a single Statement resource.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomEntry.yaml'
+    examples:
+      StatementEntry:
+        summary: A single Statement entry
+        value: |
+          <entry xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:e8f9d6c7-6b5a-5e4d-9f2c-7a1d6e5b8c3f</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Statement/333444" type="cust-entry/Statement"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Statement" type="cust-feed/Statement"/>
+            <title>Statement</title>
+            <published>2023-10-20T17:32:35.448812Z</published>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <content>
+              <Statement xmlns="http://naesb.org/espi/customer">
+                <issueDateTime>1697820000</issueDateTime>
+              </Statement>
+            </content>
+          </entry>

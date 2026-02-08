@@ -1,0 +1,42 @@
+description: >-
+  Batch transaction information for tracking resource operations.
+type: object
+xml:
+  name: BatchItemInfo
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  name:
+    description: Resource name or identifier.
+    type: string
+    maxLength: 256
+    xml:
+      name: name
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  operation:
+    description: >-
+      CRUD operation type.
+      0 = Create, 1 = Read, 2 = Update, 3 = Delete.
+    type: integer
+    format: int32
+    xml:
+      name: operation
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  statusCode:
+    description: HTTP status code for the operation (e.g., 200, 201, 404).
+    type: integer
+    format: int32
+    xml:
+      name: statusCode
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  statusReason:
+    description: Reason for the status (success message or error description).
+    type: string
+    maxLength: 512
+    xml:
+      name: statusReason
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

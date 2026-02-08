@@ -1,0 +1,43 @@
+description: >-
+  A real estate location (premises) where service is provided. Contains physical
+  address, access information, and associated usage points.
+type: object
+xml:
+  name: ServiceLocation
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  location:
+    description: Geographic location and address of the service site.
+    $ref: './Location.yaml'
+  accessMethod:
+    description: Method or instructions for accessing the location.
+    type: string
+    maxLength: 256
+    xml:
+      name: accessMethod
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  siteAccessProblem:
+    description: Description of any problems accessing the location.
+    type: string
+    maxLength: 256
+    xml:
+      name: siteAccessProblem
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  needsInspection:
+    description: Indicates if location requires inspection.
+    type: boolean
+    xml:
+      name: needsInspection
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  outageBlock:
+    description: Outage block identifier for this service location.
+    type: string
+    maxLength: 32
+    xml:
+      name: outageBlock
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

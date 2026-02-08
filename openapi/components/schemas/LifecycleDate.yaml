@@ -1,0 +1,72 @@
+description: >-
+  Important dates in the lifecycle of an asset.
+type: object
+xml:
+  name: LifecycleDate
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  manufacturedDate:
+    description: Date asset was manufactured (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: manufacturedDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  purchaseDate:
+    description: Date asset was purchased (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: purchaseDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  receivedDate:
+    description: Date asset was received (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: receivedDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  installedDate:
+    description: Date asset was installed (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: installedDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  removedDate:
+    description: Date asset was removed (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: removedDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  recoveredDate:
+    description: Date asset was recovered (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: recoveredDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  disposedDate:
+    description: Date asset was disposed (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: disposedDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  accountedForDate:
+    description: Date asset was accounted for (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: accountedForDate
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

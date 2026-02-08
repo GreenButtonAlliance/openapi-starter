@@ -1,0 +1,51 @@
+description: >-
+  Town or city address components.
+type: object
+xml:
+  name: TownDetail
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  name:
+    description: Town or city name.
+    type: string
+    maxLength: 256
+    example: "San Francisco"
+    xml:
+      name: name
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  stateOrProvince:
+    description: State or province code.
+    type: string
+    maxLength: 64
+    example: "CA"
+    xml:
+      name: stateOrProvince
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  country:
+    description: Country code (ISO 3166).
+    type: string
+    maxLength: 64
+    example: "US"
+    xml:
+      name: country
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  code:
+    description: Town or city code.
+    type: string
+    maxLength: 64
+    xml:
+      name: code
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  section:
+    description: Town section or district.
+    type: string
+    maxLength: 256
+    xml:
+      name: section
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

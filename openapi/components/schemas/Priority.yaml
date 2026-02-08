@@ -1,0 +1,32 @@
+description: >-
+  Priority definition with ranking and type classification.
+type: object
+xml:
+  name: Priority
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  rank:
+    description: Priority rank (higher number = higher priority).
+    type: integer
+    format: int32
+    xml:
+      name: rank
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  type:
+    description: Type or category of priority.
+    type: string
+    maxLength: 256
+    xml:
+      name: type
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  justification:
+    description: Justification or reason for the priority level.
+    type: string
+    maxLength: 512
+    xml:
+      name: justification
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

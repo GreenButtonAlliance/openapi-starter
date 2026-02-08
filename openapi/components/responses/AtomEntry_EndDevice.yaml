@@ -1,0 +1,24 @@
+description: >-
+  OK - Returns an Atom entry containing a single EndDevice resource.
+content:
+  application/atom+xml:
+    schema:
+      $ref: '../schemas/AtomEntry.yaml'
+    examples:
+      EndDeviceEntry:
+        summary: A single EndDevice entry
+        value: |
+          <entry xmlns="http://www.w3.org/2005/Atom">
+            <id>urn:uuid:e9f5d3c8-6b7a-5e4d-9f2c-7a1d6e5b8c3f</id>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/EndDevice/901234" type="cust-entry/EndDevice"/>
+            <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/EndDevice" type="cust-feed/EndDevice"/>
+            <title>EndDevice</title>
+            <published>2023-10-20T17:32:35.448812Z</published>
+            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <content>
+              <EndDevice xmlns="http://naesb.org/espi/customer">
+                <isVirtual>false</isVirtual>
+                <isPan>false</isPan>
+              </EndDevice>
+            </content>
+          </entry>

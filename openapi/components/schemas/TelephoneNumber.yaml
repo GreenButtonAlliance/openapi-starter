@@ -1,0 +1,75 @@
+description: >-
+  Telephone number with international dialing components.
+type: object
+xml:
+  name: TelephoneNumber
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  countryCode:
+    description: International country code (e.g., "1" for US/Canada).
+    type: string
+    maxLength: 32
+    example: "1"
+    xml:
+      name: countryCode
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  areaCode:
+    description: Area code or city code.
+    type: string
+    maxLength: 32
+    example: "415"
+    xml:
+      name: areaCode
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  cityCode:
+    description: City dialing code (for international numbers).
+    type: string
+    maxLength: 32
+    xml:
+      name: cityCode
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  localNumber:
+    description: Local phone number.
+    type: string
+    maxLength: 32
+    example: "555-1234"
+    xml:
+      name: localNumber
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  extension:
+    description: Phone extension.
+    type: string
+    maxLength: 32
+    xml:
+      name: extension
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  internationalNumberPrefix:
+    description: International dialing prefix.
+    type: string
+    maxLength: 32
+    xml:
+      name: internationalNumberPrefix
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  ituPhone:
+    description: ITU-T formatted phone number.
+    type: string
+    maxLength: 256
+    xml:
+      name: ituPhone
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  internationalLocalNumber:
+    description: Local number in international format.
+    type: string
+    maxLength: 256
+    xml:
+      name: internationalLocalNumber
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

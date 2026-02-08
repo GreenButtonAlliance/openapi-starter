@@ -1,0 +1,81 @@
+description: >-
+  Parent class for various types of documents and information groupings.
+type: object
+xml:
+  name: Document
+  namespace: http://naesb.org/espi/customer
+  prefix: customer
+properties:
+  type:
+    description: Type or category of document.
+    type: string
+    maxLength: 256
+    xml:
+      name: type
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  authorName:
+    description: Author or creator of the document.
+    type: string
+    maxLength: 256
+    xml:
+      name: authorName
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  createdDateTime:
+    description: Date and time document was created (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: createdDateTime
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  lastModifiedDateTime:
+    description: Date and time document was last modified (Unix timestamp).
+    type: integer
+    format: int64
+    xml:
+      name: lastModifiedDateTime
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  revisionNumber:
+    description: Document revision or version number.
+    type: string
+    maxLength: 64
+    xml:
+      name: revisionNumber
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  electronicAddress:
+    description: Electronic location of document.
+    $ref: './ElectronicAddress.yaml'
+  subject:
+    description: Subject or topic of document.
+    type: string
+    maxLength: 256
+    xml:
+      name: subject
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  title:
+    description: Document title.
+    type: string
+    maxLength: 256
+    xml:
+      name: title
+      namespace: http://naesb.org/espi/customer
+      prefix: customer
+  docStatus:
+    description: Document status information.
+    $ref: './Status.yaml'
+  status:
+    description: Overall status.
+    $ref: './Status.yaml'
+  comment:
+    description: General comments about the document.
+    type: string
+    maxLength: 512
+    xml:
+      name: comment
+      namespace: http://naesb.org/espi/customer
+      prefix: customer

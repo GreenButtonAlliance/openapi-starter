@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Customer Resources
+  summary: Retrieve a specific Service Supplier [FB_56]
+  description: >-
+    Returns an Atom entry containing a single ServiceSupplier resource identified by
+    serviceSupplierId. Requires a valid data_custodian_access_token.
+  operationId: findServiceSupplierByIdDC
+  parameters:
+    - name: serviceSupplierId
+      in: path
+      description: Unique identifier for the ServiceSupplier resource
+      required: true
+      schema:
+        type: string
+        minLength: 6
+        example: "111222"
+  security:
+    - oauth2: []
+  responses:
+    '200':
+      $ref: '../components/responses/AtomEntry_ServiceSupplier.yaml'
+    '400':
+      description: Bad Request - Invalid serviceSupplierId format.
+    '403':
+      description: Forbidden - The access token does not have sufficient scope.
+    '404':
+      description: Not Found - ServiceSupplier with specified ID not found.
