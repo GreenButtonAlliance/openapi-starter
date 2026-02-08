@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - Statement
   summary: Retrieve a specific Statement [FB_57]
   description: >-
     Returns an Atom entry containing a single Statement resource identified by

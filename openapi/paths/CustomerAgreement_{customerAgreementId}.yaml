@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - CustomerAgreement
   summary: Retrieve a specific Customer Agreement [FB_52]
   description: >-
     Returns an Atom entry containing a single CustomerAgreement resource identified by

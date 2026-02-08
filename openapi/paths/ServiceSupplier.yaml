@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - ServiceSupplier
   summary: Retrieve all Service Suppliers [FB_56]
   description: >-
     Returns an Atom feed containing all ServiceSupplier resources within the Data

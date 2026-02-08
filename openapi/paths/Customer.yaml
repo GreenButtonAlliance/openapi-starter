@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - Customer
   summary: Retrieve all Customers [FB_50]
   description: >-
     Returns an Atom feed containing all Customer resources within the Data

@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - ServiceLocation
   summary: Retrieve all Service Locations [FB_53]
   description: >-
     Returns an Atom feed containing all ServiceLocation resources within the Data

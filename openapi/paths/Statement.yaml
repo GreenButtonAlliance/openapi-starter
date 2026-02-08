@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - Statement
   summary: Retrieve all Statements [FB_57]
   description: >-
     Returns an Atom feed containing all Statement resources within the Data

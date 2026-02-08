@@ -117,10 +117,42 @@ tags:
     description: >-
       Operations for checking the current status of the Data Custodian
       Resource Server.
-  - name: Customer Resources
+  - name: Customer
     description: >-
-      Operations for accessing customer and billing information resources
-      (PII-containing). Uses the http://naesb.org/espi/customer namespace.
+      Operations for accessing Customer resources, which represent organizations
+      receiving services from a service supplier (PII-containing).
+  - name: CustomerAccount
+    description: >-
+      Operations for accessing Customer Account resources, which contain billing
+      and payment information (PII-containing).
+  - name: CustomerAgreement
+    description: >-
+      Operations for accessing Customer Agreement resources, which define service
+      terms at specific locations (PII-containing).
+  - name: ServiceLocation
+    description: >-
+      Operations for accessing Service Location resources, which represent physical
+      premises where service is provided (PII-containing).
+  - name: ServiceSupplier
+    description: >-
+      Operations for accessing Service Supplier resources, which represent utility
+      or energy service providers.
+  - name: EndDevice
+    description: >-
+      Operations for accessing End Device resources, which represent metering and
+      load management devices.
+  - name: Meter
+    description: >-
+      Operations for accessing Meter resources, which represent physical metering
+      assets at usage points.
+  - name: Statement
+    description: >-
+      Operations for accessing Statement resources, which represent billing
+      statements for services provided (PII-containing).
+  - name: ProgramDateIdMappings
+    description: >-
+      Operations for accessing Program Date ID Mappings, which contain customer
+      energy efficiency program enrollments.
 x-tagGroups:
   - name: OAuth Resources
     tags:
@@ -145,7 +177,15 @@ x-tagGroups:
       - ServiceStatus
   - name: Customer Data
     tags:
-      - Customer Resources
+      - Customer
+      - CustomerAccount
+      - CustomerAgreement
+      - ServiceLocation
+      - ServiceSupplier
+      - EndDevice
+      - Meter
+      - Statement
+      - ProgramDateIdMappings
 servers:
   - url: https://sandbox.greenbuttonalliance.org:8443/DataCustodian
     description: Green Button Alliance Sandbox Server

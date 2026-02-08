@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - ProgramDateIdMappings
   summary: Retrieve all Program Date ID Mappings [FB_58]
   description: >-
     Returns an Atom feed containing all ProgramDateIdMappings resources within the Data

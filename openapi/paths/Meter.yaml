@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - Meter
   summary: Retrieve all Meters [FB_55]
   description: >-
     Returns an Atom feed containing all Meter resources within the Data

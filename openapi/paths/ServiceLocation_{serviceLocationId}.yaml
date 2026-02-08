@@ -1,6 +1,6 @@
 get:
   tags:
-    - Customer Resources
+    - ServiceLocation
   summary: Retrieve a specific Service Location [FB_53]
   description: >-
     Returns an Atom entry containing a single ServiceLocation resource identified by
