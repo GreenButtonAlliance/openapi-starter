@@ -10,20 +10,35 @@ content:
         value: |
           <feed xmlns="http://www.w3.org/2005/Atom">
             <id>urn:uuid:b5e8f3c9-6d7a-5c4e-8f2b-9a1c6d5e8b3f</id>
-            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceLocation" type="cust-feed/ServiceLocation"/>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ServiceLocation" type="cust-feed/ServiceLocation"/>
             <title>ServiceLocation</title>
-            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <updated>2023-10-20T17:57:21.627755Z</updated>
             <entry>
-              <id>urn:uuid:c7f9e5d2-8a6b-5e4c-9f3a-7d1c6e5b8a2f</id>
-              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceLocation/345678" type="cust-entry/ServiceLocation"/>
-              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceLocation" type="cust-feed/ServiceLocation"/>
-              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ServiceLocation/345678/EndDevice" type="cust-feed/EndDevice"/>
+              <id>urn:uuid:fce8847d-4dac-5019-9d72-a2b756ac55b6</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ServiceLocation/d375184b-585b-5cc7-81fb-114c9655855d" type="cust-entry/ServiceLocation"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ServiceLocation" type="cust-feed/ServiceLocation"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ServiceLocation/d375184b-585b-5cc7-81fb-114c9655855d/Meter" type="cust-feed/Meter"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ServiceLocation/d375184b-585b-5cc7-81fb-114c9655855d/EndDevice" type="cust-feed/EndDevice"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/LocalTimeParameters/TIMEZONE_407607_1455265" type="cust-entry/LocalTimeParameters"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265" type="cust-entry/CustomerAgreement"/>
               <title>ServiceLocation</title>
-              <published>2023-10-20T17:32:35.448812Z</published>
-              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <published>2023-10-20T17:56:20.594174Z</published>
+              <updated>2023-10-20T17:57:21.627755Z</updated>
               <content>
                 <ServiceLocation xmlns="http://naesb.org/espi/customer">
-                  <needsInspection>false</needsInspection>
+                  <mainAddress>
+                    <streetDetail>
+                      <addressGeneral>200 SECOND AVE</addressGeneral>
+                    </streetDetail>
+                    <townDetail>
+                      <name>OLDCASTLE</name>
+                      <stateOrProvince>ON</stateOrProvince>
+                    </townDetail>
+                    <postalCode>N9V 2T7</postalCode>
+                  </mainAddress>
+                  <UsagePoints>
+                    <UsagePoint>https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/Subscription/407607/UsagePoint/1455265</UsagePoint>
+                  </UsagePoints>
                 </ServiceLocation>
               </content>
             </entry>

@@ -10,18 +10,24 @@ content:
         value: |
           <feed xmlns="http://www.w3.org/2005/Atom">
             <id>urn:uuid:e9f7d5c8-6b5a-5e4d-9f2c-8a1d6e5c7b3f</id>
-            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ProgramDateIdMappings" type="cust-feed/ProgramDateIdMappings"/>
+            <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ProgramDateIdMappings" type="cust-feed/ProgramDateIdMappings"/>
             <title>ProgramDateIdMappings</title>
-            <updated>2023-10-20T17:33:23.054424Z</updated>
+            <updated>2023-10-20T17:57:21.627755Z</updated>
             <entry>
-              <id>urn:uuid:f8e9d6c7-5b4a-5e4d-9f2c-7a1d6e5b8c3f</id>
-              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ProgramDateIdMappings/555666" type="cust-entry/ProgramDateIdMappings"/>
-              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/ProgramDateIdMappings" type="cust-feed/ProgramDateIdMappings"/>
+              <id>urn:uuid:913830f7-e2e4-5dc2-8264-3dd7ab3cf316</id>
+              <link rel="self" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ProgramDateIdMappings/5495fa4a-ce1e-57fa-beb4-862cb1a94370" type="cust-entry/ProgramDateIdMappings"/>
+              <link rel="up" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265/ProgramDateIdMappings" type="cust-feed/ProgramDateIdMappings"/>
+              <link rel="related" href="https://data.greenbuttonconnect.org/DataCustodian/espi/1_1/resource/RetailCustomer/407607/Customer/24c95599-8b3a-5e4f-9ac4-70c2a0d9646e/CustomerAccount/8e4ef00e-4122-5a90-99f7-3c4f9f6c14fe/CustomerAgreement/1455265" type="cust-entry/CustomerAgreement"/>
               <title>ProgramDateIdMappings</title>
-              <published>2023-10-20T17:32:35.448812Z</published>
-              <updated>2023-10-20T17:33:23.054424Z</updated>
+              <published>2023-10-20T17:56:20.594174Z</published>
+              <updated>2023-10-20T17:57:21.627755Z</updated>
               <content>
                 <ProgramDateIdMappings xmlns="http://naesb.org/espi/customer">
+                  <programDateIdMapping>
+                    <programDateType>CUST_DR_PROGRAM_ENROLLMENT_DATE</programDateType>
+                    <code>DR-01</code>
+                    <name>DR Enrollment</name>
+                  </programDateIdMapping>
                 </ProgramDateIdMappings>
               </content>
             </entry>
